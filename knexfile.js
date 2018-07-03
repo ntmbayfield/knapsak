@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/knapsak',
+    connection: 'postgres://localhost/knapsak_dev',
     migrations: {
       directory: './migrations'
     },
@@ -17,7 +17,7 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
+      database: 'knapsak_staging',
       user:     'username',
       password: 'password'
     },
@@ -33,7 +33,7 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
+      database: 'knapsak_prod',
       user:     'username',
       password: 'password'
     },
