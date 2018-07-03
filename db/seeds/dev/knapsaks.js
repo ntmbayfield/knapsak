@@ -1,12 +1,12 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('knapsaks').del() // delete all footnotes first
-    .then(() => knex('kids').del()) // delete all papers
-    .then(() => knex('users').del()) // delete all papers
+  return knex('knapsaks').del()
+    .then(() => knex('kids').del())
+    .then(() => knex('users').del())
       return Promise.all([
 
-        // Insert a single paper, return the paper ID, insert 2 footnotes
+        // This is where the seeding starts
         Promise.all([
           knex('users').insert({
             name: 'John Doe', email: 'jd@yahoo.com', password: 'pass1234'
@@ -31,6 +31,5 @@ exports.seed = function(knex, Promise) {
         .then(() => console.log('Seeding complete!'))
         .catch(error => console.log(`Error seeding data: ${error}`))
       ]) // end return Promise.all
-    }
-    .catch(error => console.log(`Error seeding data: ${error}`));
-};
+}
+
