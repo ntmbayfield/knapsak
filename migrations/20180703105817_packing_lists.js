@@ -2,14 +2,19 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('packing_lists', function(table) {
       table.increments('id').primary();
+
       table.integer('knapsak_id').unsigned();
       table.foreign('knapsak_id')
-        .references('knapsaks.id');
-      //        .inTable('knapsaks');
+           .references('knapsaks.id')
+           .onDelete('CASCADE');
+      //   .inTable('knapsaks');
+
       table.integer('item_id').unsigned();
       table.foreign('item_id')
-        .references('items.id');
-      //        .inTable('items');
+           .references('items.id')
+           .onDelete('CASCADE');
+      //   .inTable('items');
+
       table.integer('quantity');
 
       table.timestamp('created_at').defaultTo(knex.fn.now());
