@@ -2,9 +2,10 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('kids', function(table) {
       table.increments('id').primary();
-      table.string('name');
-      table.text('description');
-      table.timestamps(true, true);
+      table.string('name').notNullable();
+      table.text('description').notNullable();
+      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
   ]);
 };

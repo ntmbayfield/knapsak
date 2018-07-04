@@ -2,10 +2,13 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('users', function(table) {
       table.increments('id').primary();
-      table.string('name');
-      table.string('email');
-      table.string('password');
-      table.timestamps(true, true);
+      table.string('name').notNullable();
+      table.string('email').notNullable().unique('email');
+      table.string('password').notNullable();
+      // table.specificType('hashedPassword', 'char(60)').notNullable();
+      // use line 8 in place of line 7 if/when we implement authentication
+      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
   ]);
 };
