@@ -7,13 +7,11 @@ exports.up = function(knex, Promise) {
       table.foreign('knapsak_id')
            .references('knapsaks.id')
            .onDelete('CASCADE');
-      //   .inTable('knapsaks');
 
       table.integer('item_id').unsigned();
       table.foreign('item_id')
            .references('items.id')
            .onDelete('CASCADE');
-      //   .inTable('items');
 
       table.integer('quantity');
 
