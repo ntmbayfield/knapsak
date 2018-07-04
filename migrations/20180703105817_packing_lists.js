@@ -12,7 +12,8 @@ exports.up = function(knex, Promise) {
       //        .inTable('items');
       table.integer('quantity');
 
-      table.timestamps(true, true);
+      table.timestamp('created_at').defaultTo(knex.fn.now());
+      table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
   ]);
 };
