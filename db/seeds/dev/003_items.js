@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
         {id: 3, itemName: 'pajamas'},
         {id: 4, itemName: 'shorts'},
         {id: 5, itemName: 'jeans'},
-        {id: 6, itemName: 'tShirt'}
+        {id: 6, itemName: 't-shirt'}
       ]);
     });
 };
