@@ -50,8 +50,27 @@ router.post('/', function(req, res, next) {
 });
 
 /*DELETE - delete a user*/
-router.delete('/:id', function(req, res, next) {
-  res.send('');
-});
+router.delete('/:userid', function(req, res, next) {
+  knex('users')
+    .where('id', req.params.userid)
+    .del()
+    .then((data) => {
+      console.log('successfully deleted a user\'s account');
+      res.statusCode = 200;
+      return res.json('user successfully deleted');
+    })
+    .catch((error) => {
+      console.error(error);
+      res.statusCode = 500;
+      return res.json({
+        errors: 'Failed to delete user\'s account'
+      })
+    })
+    // .del()
+    // .then((data) => {
+    // if (data.length > 1 || data.length < 1) {
+    //   throw new Error('can only delete one user account per request');
+    // }
+  });
 
 module.exports = router;
