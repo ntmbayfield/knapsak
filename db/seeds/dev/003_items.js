@@ -12,5 +12,10 @@ exports.seed = function(knex, Promise) {
         {id: 5, itemName: 'jeans'},
         {id: 6, itemName: 't-shirt'}
       ]);
-    });
+    })
+    .then( function() {
+      return knex.raw(
+        "SELECT setval('items_id_seq', (SELECT MAX(id) FROM items));"
+      )
+    })
 };
