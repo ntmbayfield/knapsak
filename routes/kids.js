@@ -44,18 +44,16 @@ router.post('/', function(req, res, next) {
     })
 });
 
-// PUT update one record for this table
-router.put('/:id', (req, res, next) => {
-  knex('tablename')
+// PUT update kid name in kids
+router.put('/:kidsid', (req, res, next) => {
+  knex('kids')
   .where('id', req.params.id)
   .then((data) => {
-    knex('tablename')
+    knex('kids')
     .where('id', req.params.id)
     .limit(1)
     .update({
-      "colname1": req.body.colname1,
-      "colname2": req.body.colname2,
-      "colname3": req.body.colname3
+      "name": req.body.colname1,
     })
     .returning('*')
     .then((data) => {
