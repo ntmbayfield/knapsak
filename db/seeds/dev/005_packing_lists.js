@@ -10,5 +10,10 @@ exports.seed = function(knex, Promise) {
         {id: 3, knapsak_id: 3, item_id: 3, quantity: 4},
         {id: 4, knapsak_id: 4, item_id: 4, quantity: 5}
       ]);
-    });
+    })
+    .then( function() {
+      return knex.raw(
+        "SELECT setval('packing_lists_id_seq', (SELECT MAX(id) FROM packing_lists));"
+      )
+    })
 };

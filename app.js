@@ -1,14 +1,20 @@
-const createError = require('http-errors');
+
+
+
 const express = require('express');
+const createError = require('http-errors');
+// const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const knex = require('knex')
 
 const indexRouter = require('./routes/index');
 const knapsaksRouter = require('./routes/knapsaks.route.js');
 const usersRouter = require('./routes/users');
 
 const app = express();
+// app.use(bodyParser.json({ type: 'application/json'}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,9 +46,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-let port = 3000;
-
-app.listen(port, () => {
-  console.log('Server is up and running')
-})
 module.exports = app;

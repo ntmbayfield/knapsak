@@ -10,12 +10,7 @@ exports.seed = function(knex, Promise) {
         {id: 3, itemName: 'pajamas'},
         {id: 4, itemName: 'shorts'},
         {id: 5, itemName: 'jeans'},
-        {id: 6, itemName: 't-shirt'}
+        {id: 6, itemName: 'tShirt'}
       ]);
-    })
-    .then( function() {
-      return knex.raw(
-        "SELECT setval('items_id_seq', (SELECT MAX(id) FROM items));"
-      )
-    })
+    });
 };
