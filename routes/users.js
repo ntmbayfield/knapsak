@@ -29,8 +29,8 @@ router.get('/:userid', function(req, res, next) {
 router.post('/', function(req, res, next) {
   let userInfo = {
     name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
+    email: req.body.email,
+    password: req.body.password,
       // hashpassword: "todo"
   };
   knex('users')
@@ -49,6 +49,44 @@ router.post('/', function(req, res, next) {
     });
 });
 
+/*UPDATE - update a user*/
+router.put('/:userid', function(req, res, next) {
+  knex('users')
+    .where('id', req.params.userid)
+    .then(function(user) {
+      console.log(user);
+
+      // was the user found?
+      if(user.length>0) {
+        // we are sure that the user exists
+        knex('users')
+        .where('id', req.params.userid)
+        .update({
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password
+        })
+        .return('*')
+        .then(function(updatedUser) {
+          console.log('successfully updated a user\'s account');
+          res.statusCode = 200;
+          return res.json('user successfully updated');
+        })
+      } else {
+        // user wasn't found
+        throw new Error('Oops, no user with that id')
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      res.statusCode = 500;
+      return res.json({
+        errors: 'Failed to update user\'s account'
+      })
+    })
+  });
+
+
 /*DELETE - delete a user*/
 router.delete('/:userid', function(req, res, next) {
   knex('users')
@@ -66,11 +104,6 @@ router.delete('/:userid', function(req, res, next) {
         errors: 'Failed to delete user\'s account'
       })
     })
-    // .del()
-    // .then((data) => {
-    // if (data.length > 1 || data.length < 1) {
-    //   throw new Error('can only delete one user account per request');
-    // }
   });
 
 module.exports = router;
