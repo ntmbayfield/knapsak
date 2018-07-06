@@ -8,6 +8,12 @@ var app = require('../app');
 var debug = require('debug')('knapsak:server');
 var http = require('http');
 
+//Your database configuration
+var DATABASE_URL = 'postgres://localhost/knapsak_dev';
+
+//Connect to Postgres database
+
+
 /**
  * Get port from environment and store in Express.
  */
