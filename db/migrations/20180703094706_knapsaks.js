@@ -4,10 +4,10 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('description').notNullable();
 
-      // table.integer('user_id').unsigned();
-      // table.foreign('user_id')
-      //      .references('users.id')
-      //      .onDelete('CASCADE');
+      table.integer('user_id').unsigned();
+      table.foreign('user_id')
+           .references('users.id')
+           .onDelete('CASCADE');
 
       table.integer('kid_id').unsigned();
       table.foreign('kid_id')
