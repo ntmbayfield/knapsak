@@ -6,7 +6,7 @@ var knex = require('../knex');
 router.get('/', function(req, res, next) {
   knex('kids')
   .then((data) => {
-    // console.log('data', data)
+    console.log('data', data)
     res.send(data)
   })
   .catch((err) => {
@@ -17,9 +17,8 @@ router.get('/', function(req, res, next) {
 // GET listing for a single kid
 router.get('/:kidsid', function(req, res, next) {
   knex('kids')
-  .where('id', req.params.userid)
+  .where('id', req.params.kidsid)
   .then((data) => {
-    // console.log('please take these kids before I lose my mind', data)
     res.send(data)
   })
   .catch((err) => {
@@ -47,13 +46,13 @@ router.post('/', function(req, res, next) {
 // PUT update kid name in kids
 router.put('/:kidsid', (req, res, next) => {
   knex('kids')
-  .where('id', req.params.id)
+  .where('id', req.params.kidsid)
   .then((data) => {
     knex('kids')
-    .where('id', req.params.id)
+    .where('id', req.params.kidsid)
     .limit(1)
     .update({
-      "name": req.body.colname1,
+      "name": req.body.name
     })
     .returning('*')
     .then((data) => {
