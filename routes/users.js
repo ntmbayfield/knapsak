@@ -3,6 +3,7 @@ var router = express.Router();
 var knex = require('../knex');
 
 
+
 /* GET ALL users listing. */
 router.get('/', function(req, res, next) {
   //USE KNEX TO GET ALL USERS
@@ -26,29 +27,26 @@ router.get('/:userid', function(req, res, next) {
 
 /*POST - create a new user*/
 router.post('/', function(req, res, next) {
-  var sql = 'INSERT INTO users (name, email, password, hashpassword) VALUES ($1, $2, $3, $4)';
-  var data = [
-    req.body.name,
-    req.body.email,
-    req.body.password,
-    req.body.hashpassword
-  ];
-  knex (sql, data, function(err, result) {
-    if (err) {
-      console.error(err);
+  let userInfo = {
+    name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      // hashpassword: "todo"
+  };
+  knex('users')
+    .insert(userInfo)
+    .then((data) => {
+      console.log('sucessfully created user account');
+      res.statusCode = 200;
+      return res.json(userInfo);
+    })
+    .catch(function(error) {
+      console.error(error);
       res.statusCode = 500;
       return res.json({
         errors: ['Failed to create user account']
       })
-    } else {
-        res.statusCode = 200;
-        return res.json({
-          name: req.body.name,
-          email: req.body.email,
-          id: result.id
-        });
-      };
-  });
+    });
 });
 
 /*DELETE - delete a user*/
