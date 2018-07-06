@@ -6,7 +6,8 @@ const router = express.Router();
 
 
 // a simple test url to check that all of our files are communicating correctly.
-router.get('/knapsaks', (req, res) => {
+/*GET - list of all of a user's saved knapsaks*/
+router.get('/users/:id/knapsaks', (req, res) => {
   database('knapsaks').select()
     .then((knapsaks) => {
       response.status(200).json(knapsaks);
@@ -15,4 +16,7 @@ router.get('/knapsaks', (req, res) => {
       response.status(500).json({ error });
     });
 });
+
+/*POST - save a new knapsak for a user*/
+router.post('/users/:id/knapsaks/:id')
 module.exports = router;
