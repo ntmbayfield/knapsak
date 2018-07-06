@@ -6,8 +6,11 @@ var knex = require('../knex');
 router.get('/', function(req, res, next) {
   knex('kids')
   .then((data) => {
-    console.log('data', data)
+    // console.log('data', data)
     res.send(data)
+  })
+  .catch((err) => {
+    next(err)
   })
 });
 
@@ -16,8 +19,11 @@ router.get('/:kidsid', function(req, res, next) {
   knex('kids')
   .where('id', req.params.userid)
   .then((data) => {
-    console.log('please take these kids before I lose my mind', data)
+    // console.log('please take these kids before I lose my mind', data)
     res.send(data)
+  })
+  .catch((err) => {
+    next(err)
   })
 });
 
@@ -29,39 +35,37 @@ router.post('/', function(req, res, next) {
   knex('kids')
     .insert(userInfo)
     .then((data) => {
-      console.log('successfully created kid entry');
+      // console.log('successfully created kid entry');
       res.statusCode = 200;
       return res.json(userInfo);
     })
-    .catch(function(error) {
-      console.error(error);
-      res.statusCode = 500;
-      return res.json({
-        errors: ['Failed to create kid entry']
-      })
-    });
+    .catch((err) => {
+      next(err)
+    })
 });
 
-// PUT update an existing kid
-// router.put('/', function(req, res, next) {
-//   let userInfo = {
-//     name: req.body.name
-//   };
-//   knex('kids')
-//     .insert(userInfo)
-//     .then((data) => {
-//       console.log('successfully created kid entry');
-//       res.statusCode = 200;
-//       return res.json(userInfo);
-//     })
-//     .catch(function(error) {
-//       console.error(error);
-//       res.statusCode = 500;
-//       return res.json({
-//         errors: ['Failed to create kid entry']
-//       })
-//     });
-// });
+// PUT update one record for this table
+router.put('/:id', (req, res, next) => {
+  knex('tablename')
+  .where('id', req.params.id)
+  .then((data) => {
+    knex('tablename')
+    .where('id', req.params.id)
+    .limit(1)
+    .update({
+      "colname1": req.body.colname1,
+      "colname2": req.body.colname2,
+      "colname3": req.body.colname3
+    })
+    .returning('*')
+    .then((data) => {
+      res.json(data[0])
+    })
+  })
+  .catch((err) => {
+    next(err)
+  })
+})
 
 // DELETE a user aka 'you're adopted'
 router.delete('/:kidsid', function(req, res, next) {
@@ -73,12 +77,8 @@ router.delete('/:kidsid', function(req, res, next) {
       res.statusCode = 200;
       return res.json('kid successfully deleted');
     })
-    .catch((error) => {
-      console.error(error);
-      res.statusCode = 500;
-      return res.json({
-        errors: 'Failed to delete kid\'s entry'
-      })
+    .catch((err) => {
+      next(err)
     })
   });
 
