@@ -6,33 +6,33 @@ module.exports = {
     client: 'pg',
     connection: 'postgres://localhost/knapsak_dev',
     migrations: {
-      directory: './migrations'
+      directory: './db/migrations'
     },
     seeds: {
       directory: './db/seeds/dev'
-    },
-    useNullAsDefault: true
+    }
   },
 
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'knapsak_staging',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+  testing: {
+    client: 'pg',
+    connection: 'postgres://localhost/knapsak_test',
     migrations: {
-      tableName: 'knex_migrations'
+      directory: './db/migrations'
+    },
+    seeds: {
+      directory: './db/seeds/dev'
     }
   },
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: './db/migrations'
+    },
+    seeds: {
+      directory: './db/seeds/dev'
+    }
   }
 
 };
