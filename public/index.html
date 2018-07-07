@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="style" href="style.css">
   </head>
+
   <body class="w3-container" style="background-color:powderblue;">
-    <div>
+    <div class="center">
       <button type="button">LogIn</button>
       <h1>Knapsak</h1>
       <h4>A visual packing list for kids</h4>
@@ -16,17 +18,17 @@
         <input id="kidsName" type="text" placeholder="Kid's Name" required value="">
         <button onclick="KidsSubmit()">Submit</button>
         <p></p><br>
+
+        <!-- INPUT to test the POST route to the DB -->
         <input id="userName" type="text" placeholder="User Name" required value="">
         <button onclick="createUser()">Submit</button>
       </form>
-      <!-- <button onclick="/packlist.html">NEXT</button> -->
-      <!-- Link to items page -->
       <p></p><br>
+      <!-- <button onclick="/packlist.html">NEXT</button> -->
       <a href="items.html" class="w3-btn w3-blue">NEXT</a>
     </div>
-
+    <!-- comment out the script line in order to test route -->
     <!-- <script src="localstoragescript.js"></script> -->
     <script src="apicalls/createuser.js"></script>
-
   </body>
 </html>
