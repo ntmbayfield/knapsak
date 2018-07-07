@@ -13,17 +13,20 @@
       <br>
       <form>
         Who's going?:<br>
-        <input id="kidsName" type="text" placeholder="Kid's Name" required>
-        <br><br>
-        <button>Submit</button>
-        <!-- <button onclick="myFunction()">Submit</button> -->
+        <input id="kidsName" type="text" placeholder="Kid's Name" required value="">
+        <button onclick="KidsSubmit()">Submit</button>
+        <p></p><br>
+        <input id="userName" type="text" placeholder="User Name" required value="">
+        <button onclick="createUser()">Submit</button>
       </form>
       <!-- <button onclick="/packlist.html">NEXT</button> -->
       <!-- Link to items page -->
+      <p></p><br>
       <a href="items.html" class="w3-btn w3-blue">NEXT</a>
     </div>
 
-    <script src="localstoragescript.js"></script>
+    <!-- <script src="localstoragescript.js"></script> -->
+    <script src="apicalls/createuser.js"></script>
 
   </body>
 </html>
