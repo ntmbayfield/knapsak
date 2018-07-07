@@ -6,6 +6,8 @@
 console.log('Starting todo JS');
 let localStorageItems = localStorage.getItem('items')
 console.log(localStorageItems);
+
+
 // Create a "close" button and append it to each list item
 var myPackingList = document.getElementsByTagName("LI");
 var i;
