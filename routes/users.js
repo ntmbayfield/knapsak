@@ -3,6 +3,7 @@ var router = express.Router();
 var knex = require('../knex');
 
 
+
 /* GET ALL users listing. */
 router.get('/', function(req, res, next) {
   //USE KNEX TO GET ALL USERS
@@ -26,34 +27,83 @@ router.get('/:userid', function(req, res, next) {
 
 /*POST - create a new user*/
 router.post('/', function(req, res, next) {
-  var sql = 'INSERT INTO users (name, email, password, hashpassword) VALUES ($1, $2, $3, $4)';
-  var data = [
-    req.body.name,
-    req.body.email,
-    req.body.password,
-    req.body.hashpassword
-  ];
-  knex (sql, data, function(err, result) {
-    if (err) {
-      console.error(err);
+  let userInfo = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+      // hashpassword: "todo"
+  };
+  knex('users')
+    .insert(userInfo)
+    .then((data) => {
+      console.log('sucessfully created user account');
+      res.statusCode = 200;
+      return res.json(userInfo);
+    })
+    .catch(function(error) {
+      console.error(error);
       res.statusCode = 500;
       return res.json({
         errors: ['Failed to create user account']
       })
-    } else {
-        res.statusCode = 200;
-        return res.json({
-          name: req.body.name,
-          email: req.body.email,
-          id: result.id
-        });
-      };
-  });
+    });
 });
 
+/*UPDATE - update a user*/
+router.put('/:userid', function(req, res, next) {
+  knex('users')
+    .where('id', req.params.userid)
+    .then(function(user) {
+      console.log(user);
+
+      // was the user found?
+      if(user.length>0) {
+        // we are sure that the user exists
+        knex('users')
+        .where('id', req.params.userid)
+        .update({
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password
+        })
+        .return('*')
+        .then(function(updatedUser) {
+          console.log('successfully updated a user\'s account');
+          res.statusCode = 200;
+          return res.json('user successfully updated');
+        })
+      } else {
+        // user wasn't found
+        throw new Error('Oops, no user with that id')
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      res.statusCode = 500;
+      return res.json({
+        errors: 'Failed to update user\'s account'
+      })
+    })
+  });
+
+
 /*DELETE - delete a user*/
-router.delete('/:id', function(req, res, next) {
-  res.send('');
-});
+router.delete('/:userid', function(req, res, next) {
+  knex('users')
+    .where('id', req.params.userid)
+    .del()
+    .then((data) => {
+      console.log('successfully deleted a user\'s account');
+      res.statusCode = 200;
+      return res.json('user successfully deleted');
+    })
+    .catch((error) => {
+      console.error(error);
+      res.statusCode = 500;
+      return res.json({
+        errors: 'Failed to delete user\'s account'
+      })
+    })
+  });
 
 module.exports = router;
