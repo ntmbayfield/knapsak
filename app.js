@@ -12,6 +12,7 @@ const knex = require('knex')
 const indexRouter = require('./routes/index');
 const knapsaksRouter = require('./routes/knapsaks.route.js');
 const usersRouter = require('./routes/users');
+const kidsRouter = require('./routes/kids');
 
 const app = express();
 // app.use(bodyParser.json({ type: 'application/json'}));
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/knapsaks', knapsaksRouter);
 app.use('/users', usersRouter);
+app.use('/kids', kidsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

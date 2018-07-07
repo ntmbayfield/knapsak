@@ -28,19 +28,19 @@ router.get('/:kidsid', function(req, res, next) {
 
 // POST create a new kid
 router.post('/', function(req, res, next) {
-  let kidsInfo = {
+  let kidsName = {
     name: req.body.name
   };
   knex('kids')
-    .insert(kidsInfo)
+    .insert(kidsName)
     .then((data) => {
       // console.log('successfully created kid entry');
       res.statusCode = 200;
-      return res.json(kidsInfo);
+      return res.json(kidsName);
     })
-    .catch((err) => {
-      next(err)
-    })
+    // .catch((err) => {
+    //   next(err)
+    // })
 });
 
 // PUT update kid name in kids
