@@ -18,7 +18,7 @@ var DATABASE_URL = 'postgres://localhost/knapsak_dev';
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '');
+var port = normalizePort(process.env.PORT || '3333');
 
 app.set('port', port);
 
