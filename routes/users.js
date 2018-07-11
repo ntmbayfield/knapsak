@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 
 /* GET listing for a single user*/
 router.get('/:userid', function(req, res, next) {
-  //USE KNEX TO GET ALL USERS
+  //USE KNEX TO GET A SPECIFIC USER
   knex('users')
   .where('id', req.params.userid)
   .then((data) => {
@@ -30,7 +30,7 @@ router.post('/', function(req, res, next) {
   let userInfo = {
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password,
+    password: req.body.password
       // hashpassword: "todo"
   };
   knex('users')

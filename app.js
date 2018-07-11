@@ -13,6 +13,7 @@ const indexRouter = require('./routes/index');
 const knapsaksRouter = require('./routes/knapsaks');
 const usersRouter = require('./routes/users');
 const itemsRouter = require('./routes/items');
+const packing_listsRouter = require('./routes/packing_lists');
 
 const app = express();
 // app.use(bodyParser.json({ type: 'application/json'}));
@@ -31,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/knapsaks', knapsaksRouter);
 app.use('/users', usersRouter);
 app.use('/items', itemsRouter);
+app.use('/packing_lists', packing_listsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
