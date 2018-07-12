@@ -58,21 +58,21 @@ router.post('/', function(req, res, next) {
 });
 
 /*UPDATE - update the quantity of a specific packing_list item*/
-router.put('/:packing_listid', function(req, res, next) {
+router.put('/:packingListid', function(req, res, next) {
   knex('packing_lists')
-    .where('id', req.params.packing_listid)
+    .where('id', req.params.packingListId)
     .then(function(packing_list) {
       console.log(packing_list);
 
-      // was the user found?
+      // was the packing_list found?
       if(packing_list.length>0) {
-        // we are sure that the user exists
+        // we are sure that the packing_list exists
         knex('packing_lists')
-        .where('id', req.params.packing_listid)
+        .where('id', req.params.packingListId)
         .update({
-          pantyhose: 2,
-          wigs: 5,
-          high_heels: 10
+          knapsak_id: req.body.knapsakId,
+          item_id: req.body.itemId,
+          quantity: req.body.quantity
         })
         .return('*')
         .then(function(updatedPacking_List) {
@@ -94,7 +94,7 @@ router.put('/:packing_listid', function(req, res, next) {
     })
   });
 
-  /*DELETE - delete all items specific packing_list*/
+  /*DELETE - delete all items on a specific packing_list*/
   router.delete('/:knapsakid', function(req, res, next) {
     knex('packing_lists')
       .where('knapsak_id', req.params.knapsakid)

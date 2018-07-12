@@ -15,10 +15,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET listing for a single user*/
-router.get('/:userid', function(req, res, next) {
+router.get('/:userId', function(req, res, next) {
   //USE KNEX TO GET A SPECIFIC USER
   knex('users')
-  .where('id', req.params.userid)
+  .where('id', req.params.userId)
   .then((data) => {
     console.log('the specific user', data)
     res.send(data)
