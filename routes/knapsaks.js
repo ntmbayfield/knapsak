@@ -58,7 +58,41 @@ router.post('/:userId/new', (req, res, next) => {
 
 
 /*UPDATE - update the contents of a particular knapsak belonging to the user*/
-// router.put('/users/:id/knapsaks/:id')
+router.put('/:userid/:knapsakid', (req, res, next) => {
+  knex('knapsaks')
+  .where('user_id', req.params.userid)
+  .andWhere('id', req.params.knapsakid)
+  .then(function(knapsak) {
+    console.log(knapsak);
+    if(knapsak.length>0) {
+      // we are sure that the knapsak exists
+      knex('knapsaks')
+      .where('id', req.params.knapsakid)
+      .update({
+        user_id: req.body.user_id,
+        description: req.body.description,
+        kid_id: req.body.kid_id
+      })
+      .return('*')
+      .then(function(updatedKnapsaks) {
+        console.log('successfully updated user\'s knapsak');
+        res.statusCode = 200;
+        return res.json('user\'s knapsak was successfully updated');
+      })
+    } else {
+      // knapsak wasn't found
+      throw new Error('Oops, no knapsak with that id')
+    }
+  })
+    .catch((error) => {
+      console.error(error);
+      res.statusCode = 500;
+      return res.json({
+        errors: 'Failed to update knapsak with specified id'
+      })
+    })
+})
+
 
 /*DELETE - delete a particular knapsak belonging to a user*/
 router.delete('/:userId/:knapsakId', (req, res, next) => {
@@ -78,7 +112,7 @@ router.delete('/:userId/:knapsakId', (req, res, next) => {
         errors: 'Failed to delete user\'s knapsak'
       })
     })
-});
+})
 
 
 module.exports = router;

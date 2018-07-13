@@ -33,7 +33,7 @@ router.get('/:knapsakid', function(req, res, next) {
 
 
 
-/*POST - create a new packing_list_item*/
+/*POST - create a new packing_lists item*/
 router.post('/', function(req, res, next) {
   let packing_listInfo = {
     knapsak_id: req.body.knapsakid,
@@ -58,9 +58,9 @@ router.post('/', function(req, res, next) {
 });
 
 /*UPDATE - update the quantity of a specific packing_list item*/
-router.put('/:packingListid', function(req, res, next) {
+router.put('/:packinglistid', function(req, res, next) {
   knex('packing_lists')
-    .where('id', req.params.packingListId)
+    .where('id', req.params.packing_list_id)
     .then(function(packing_list) {
       console.log(packing_list);
 
@@ -68,10 +68,10 @@ router.put('/:packingListid', function(req, res, next) {
       if(packing_list.length>0) {
         // we are sure that the packing_list exists
         knex('packing_lists')
-        .where('id', req.params.packingListId)
+        .where('id', req.params.packing_list_id)
         .update({
-          knapsak_id: req.body.knapsakId,
-          item_id: req.body.itemId,
+          knapsak_id: req.body.knapsakid,
+          item_id: req.body.itemid,
           quantity: req.body.quantity
         })
         .return('*')
