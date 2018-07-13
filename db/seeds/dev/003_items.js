@@ -12,8 +12,8 @@ exports.seed = function(knex, Promise) {
         {id: 5, itemName: 'tights/stockings', category: 'basics'},
         {id: 6, itemName: 'pajamas', category: 'basics'},
         {id: 7, itemName: 'robe', category: 'basics'},
-        {id: 8, itemName: 'dressy shirts', category: 'dressy'}
-        {id: 9, itemName: 'dressy sweaters', category: 'dressy'}
+        {id: 8, itemName: 'dressy shirts', category: 'dressy'},
+        {id: 9, itemName: 'dressy sweaters', category: 'dressy'},
         {id: 10, itemName: 'dressy jackets', category: 'dressy'},
         {id: 11, itemName: 'dressy pants', category: 'dressy'},
         {id: 12, itemName: 'dressy skirts', category: 'dressy'},
