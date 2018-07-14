@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/knapsaks', knapsaksRouter);
+app.use('/users/:userid/knapsaks', knapsaksRouter);
 app.use('/users', usersRouter);
 app.use('/items', itemsRouter);
 app.use('/packing_lists', packing_listsRouter);

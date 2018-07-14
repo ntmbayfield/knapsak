@@ -5,10 +5,10 @@ var knex = require('../knex');
 
 // a simple test url to check that all of our files are communicating correctly.
 /*GET - all saved knapsaks belonging to that user*/
-router.get('/:userId', (req, res, next) => {
+router.get('/', (req, res, next) => {
   console.log('users knapsaks hit')
   knex('knapsaks')
-  .where('user_id', req.params.userId)
+  .where('user_id', req.params.userid)
   .then((data) => {
     console.log('data', data)
     res.send(data)
@@ -17,7 +17,7 @@ router.get('/:userId', (req, res, next) => {
 
 
 /*GET - a specific saved knapsak belonging to a particular user*/
-router.get('/:userId/:knapsakId', (req, res, next) => {
+router.get('/:knapsakid', (req, res, next) => {
   console.log('user\'s specific knapsak hit')
   knex('knapsaks')
   .where('user_id', req.params.userId)
@@ -31,7 +31,7 @@ router.get('/:userId/:knapsakId', (req, res, next) => {
 
 
 /*POST - save a new knapsak for a user*/
-router.post('/:userId/new', (req, res, next) => {
+router.post('/new', (req, res, next) => {
   let knapsakInfo = {
     userid: req.params.userId,
     description: req.body.description,
@@ -58,7 +58,7 @@ router.post('/:userId/new', (req, res, next) => {
 
 
 /*UPDATE - update the contents of a particular knapsak belonging to the user*/
-router.put('/:userid/:knapsakid', (req, res, next) => {
+router.put('/:knapsakid', (req, res, next) => {
   knex('knapsaks')
   .where('user_id', req.params.userid)
   .andWhere('id', req.params.knapsakid)
@@ -95,7 +95,7 @@ router.put('/:userid/:knapsakid', (req, res, next) => {
 
 
 /*DELETE - delete a particular knapsak belonging to a user*/
-router.delete('/:userId/:knapsakId', (req, res, next) => {
+router.delete('/:knapsakId', (req, res, next) => {
     knex('knapsaks')
     .where('user_id', req.params.userId)
     .andWhere('id', req.params.knapsakId)
