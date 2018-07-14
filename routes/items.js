@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var knex = require('../knex');
+const express = require('express');
+const router = express.Router();
+const knex = require('../knex');
 
 
 //GET - all items
