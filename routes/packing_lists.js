@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var knex = require('../knex');
+const express = require('express');
+const router = express.Router({mergeParams: true});
+const knex = require('../knex');
 
 
 
-//GET listing of all items and in what quantities are in a specific knapsak*/
-router.get('/:knapsakid', function(req, res, next) {
+//GET /users/:userid/knapsaks/:knapsakid/packing_list - retrieve list of all items and in what quantities are in a specific knapsak*/
+router.get('/', function(req, res, next) {
   knex('packing_lists')
   .where('knapsak_id', req.params.knapsakid)
   .then((packingList) => {
@@ -27,19 +27,36 @@ router.get('/:knapsakid', function(req, res, next) {
   })
 });
 
+//GET /users/:userid/knapsaks/:knapsakid/packing_list/:packinglistid - retrieve list of all items and in what quantities are in a specific knapsak*/
+router.get('/:packinglistid', function(req, res, next) {
+  knex('packing_lists')
+  .where('knapsak_id', req.params.knapsakid)
+  .andWhere('id', req.params.packinglistid)
+  .then((packingList) => {
+    console.log(packingList);
+    if(packingList.length>0) {
+      // we are sure that the user exists
+      res.send(packingList);
+    } else {
+    // packing_list wasn't found
+      throw new Error('Oops, no packing_list with that id')
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+    res.statusCode = 500;
+    return res.json({
+      errors: 'There are no items on that packing_list'
+    })
+  })
+});
 
-
-
-
-
-
-/*POST - create a new packing_list_item*/
-router.post('/', function(req, res, next) {
+/*POST /users/:userid/knapsaks/:knapsakid/packing_lists - create a new packing_lists item*/
+router.post('/new', function(req, res, next) {
   let packing_listInfo = {
     knapsak_id: req.body.knapsakid,
     item_id: req.body.itemid,
     quantity: req.body
-
   };
   knex('packing_lists')
     .insert(packing_listInfo)
@@ -57,21 +74,19 @@ router.post('/', function(req, res, next) {
     });
 });
 
-/*UPDATE - update the quantity of a specific packing_list item*/
-router.put('/:packingListid', function(req, res, next) {
+/*UPDATE /users/:userid/knapsaks/:knapsakid/packing_lists/:packinglistid - update the quantity of a specific packing_list item*/
+router.put('/:packinglistid', function(req, res, next) {
   knex('packing_lists')
-    .where('id', req.params.packingListId)
+    .where('id', req.params.packinglistid)
     .then(function(packing_list) {
       console.log(packing_list);
 
       // was the packing_list found?
       if(packing_list.length>0) {
-        // we are sure that the packing_list exists
+        // we are sure that the packinglist exists
         knex('packing_lists')
-        .where('id', req.params.packingListId)
+        .where('id', req.params.packinglistid)
         .update({
-          knapsak_id: req.body.knapsakId,
-          item_id: req.body.itemId,
           quantity: req.body.quantity
         })
         .return('*')
@@ -94,10 +109,11 @@ router.put('/:packingListid', function(req, res, next) {
     })
   });
 
-  /*DELETE - delete all items on a specific packing_list*/
-  router.delete('/:knapsakid', function(req, res, next) {
+  /*DELETE /users/:userid/knapsaks/:knapsakid/packing_lists/:packinglistid - delete a specific packing_lists item from a knapsak*/
+  router.delete('/:packinglistid', function(req, res, next) {
     knex('packing_lists')
       .where('knapsak_id', req.params.knapsakid)
+      .andWhere('id', req.params.packinglistid)
       .del()
       .then((data) => {
         console.log('successfully deleted specified packing_list');

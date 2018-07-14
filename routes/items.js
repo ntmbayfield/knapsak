@@ -53,7 +53,7 @@ router.put('/:itemid', (req, res, next) => {
       knex('items')
       .where('id', req.params.itemid)
       .update({
-        name: req.body.item_name,
+        itemName: req.body.itemName,
         image: req.body.image
       })
       .return('*')
@@ -73,8 +73,8 @@ router.put('/:itemid', (req, res, next) => {
     return res.json({
       errors: 'Failed to update item'
     })
-  })
-})
+  });
+});
 
 //DELETE - an item
 router.delete('/:itemid', (req, res, next) => {
@@ -92,7 +92,7 @@ router.delete('/:itemid', (req, res, next) => {
     return res.json({
       errors: 'Failed to delete item'
     })
-  })
-})
+  });
+});
 
 module.exports = router;
