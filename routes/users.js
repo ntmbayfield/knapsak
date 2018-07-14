@@ -1,8 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var knex = require('../knex');
+const express = require('express');
+const router = express.Router();
+const knex = require('../knex');
 
-
+/***********************************************
+            /users routes
+***********************************************/
 
 /* GET ALL users listing. */
 router.get('/', function(req, res, next) {
@@ -15,10 +17,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET listing for a single user*/
-router.get('/:userId', function(req, res, next) {
+router.get('/:userid', function(req, res, next) {
   //USE KNEX TO GET A SPECIFIC USER
   knex('users')
-  .where('id', req.params.userId)
+  .where('id', req.params.userid)
   .then((data) => {
     console.log('the specific user', data)
     res.send(data)
@@ -105,5 +107,24 @@ router.delete('/:userid', function(req, res, next) {
       })
     })
   });
+
+/*************************************************
+                /knapsaks routes
+*************************************************/
+
+const knapsaksroute = require('./knapsaks')
+
+//GET /users/:userid/knapsaks
+router.use('/:userid/knapsaks', knapsaksroute)
+
+/*************************************************
+                /packing_lists routes
+*************************************************/
+
+const packinglistsroute = require('./packing_lists')
+
+//GET /users/:userid/knapsaks/:knapsakid/packing_lists
+router.use('/:userid/knapsaks/:knapsakid/packing_lists', packinglistsroute)
+
 
 module.exports = router;
