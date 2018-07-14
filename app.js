@@ -32,7 +32,7 @@ app.use('/', indexRouter);
 app.use('/users/:userid/knapsaks', knapsaksRouter);
 app.use('/users', usersRouter);
 app.use('/items', itemsRouter);
-app.use('/packing_lists', packing_listsRouter);
+app.use('/users/:userid/knapsaks/:knapsakid/packing_lists', packing_listsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
