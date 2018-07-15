@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+<link rel="stylesheet" href="stylesheets/style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+  <div class="w3-container w3-black">
+    <p></p>
+    <h1><img src="images/knapsak_logo_long.png" alt="knapsak_lglogo" style="width:25%">Add items to your Knapsak</h1>
+  </div>
+
+  <div class="w3-row-padding w3-margin-top">
+
+    <!-- CARD =================== -->
+    <div class="w3-third">
+      <div class="w3-card-8 w3-blue" style="width:95%">
+        <div class="w3-container w3-center">
+          <h3>T-Shirt <span id="shirtsCount" class="w3-badge">0</span></h3>
+          <!-- <input type="text" id="shirtCount" value="0"> -->
+          <!-- <button type="text" id="shirtCount" value="0">0</button> -->
+
+          <img src="images/tshirt.png" alt="t-shirt" style="width:80%">
+
+            <div class="w3-section">
+               <a id="shirts" class="w3-circle w3-green w3-padding" onclick="addItems()">+</a>
+               <a id="shirts" class="w3-circle w3-red w3-padding" onclick="removeItems()">-</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CARD =================== -->
+    <div class="w3-third">
+      <div class="w3-card-8 w3-blue" style="width:95%">
+        <div class="w3-container w3-center">
+          <h3>Shorts <span id="shortsCount" class="w3-badge">0</span></h3>
+          <img src="images/shorts.png" alt="shorts" style="width:80%">
+
+            <div class="w3-section">
+              <a id="shorts" class="w3-circle w3-green w3-padding" onclick='addItems()'>+</a>
+              <a id="shorts" class="w3-circle w3-red w3-padding" onclick="removeItems()">-</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD =================== -->
+    <div class="w3-third">
+      <div class="w3-card-8 w3-blue" style="width:95%">
+        <div class="w3-container w3-center">
+          <h3>Socks <span id="socksCount" class="w3-badge">0</span></h3>
+          <img src="images/socks.png" alt="socks" style="width:80%">
+
+            <div class="w3-section">
+              <a id="socks" class="w3-circle w3-green w3-padding" onclick='addItems()'>+</a>
+              <a id="socks" class="w3-circle w3-red w3-padding" onclick="removeItems()">-</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="w3-row-padding w3-margin-top">
+
+    <!-- CARD =================== -->
+    <div class="w3-third">
+      <div class="w3-card-8 w3-blue" style="width:95%">
+        <div class="w3-container w3-center">
+          <h3>Undies <span id="undiesCount" class="w3-badge">0</span></h3>
+          <img src="images/undies_boys.png" alt="undies-boy" style="width:80%">
+
+            <div class="w3-section">
+              <a id="undies" class="w3-circle w3-green w3-padding" onclick='addItems()'>+</a>
+              <a id="undies" class="w3-circle w3-red w3-padding" onclick="removeItems()">-</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD =================== -->
+    <div class="w3-third">
+      <div class="w3-card-8 w3-blue" style="width:95%">
+        <div class="w3-container w3-center">
+          <h3>Jacket <span id="jacketCount" class="w3-badge">0</span></h3>
+          <img src="images/jacket.png" alt="jacket" style="width:80%">
+
+            <div class="w3-section">
+              <a id="shorts" class="w3-circle w3-green w3-padding" onclick='addItems()'>+</a>
+              <a id="shorts" class="w3-circle w3-red w3-padding" onclick="removeItems()">-</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD =================== -->
+    <div class="w3-third">
+      <div class="w3-card-8 w3-blue" style="width:95%">
+        <div class="w3-container w3-center">
+          <h3>Item <span id="itemCount" class="w3-badge">0</span></h3>
+          <img src="images/tshirt.png" alt="t-shirt" style="width:80%">
+
+            <div class="w3-section">
+              <a id="shorts" class="w3-circle w3-green w3-padding" onclick='addItems()'>+</a>
+              <a id="shorts" class="w3-circle w3-red w3-padding" onclick="removeItems()">-</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="w3-btn w3-green" onclick="onSave()">SAVE</button>
+
+    </div>
+
+    <script src="items.js"></script>
+  </body>
+
+</html>

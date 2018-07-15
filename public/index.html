@@ -2,30 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="style" href="style.css">
+    <title>Knapsak - A visual packing list for kids</title>
+    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+    <link rel="style" href="stylesheets/style.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
   </head>
 
-  <body class="w3-container" style="background-color:powderblue;">
-    <div class="center">
-      <button type="button">LogIn</button>
-      <h1>Knapsak</h1>
-      <h4>A visual packing list for kids</h4>
-      <br>
+  <body class="w3-container" style="background-color:dodgerblue;">
+    <div>
+      <h2>testing stylesheets load...</h2>
+      <button type="button" style="position: absolute; right: 0;">LogIn</button>
+      <img src="images/knapsak_logo.png" alt="Knapsak Logo" style="width:50%" class="center">
+
       <form>
-        Who's going?:<br>
-        <input id="kidsName" type="text" placeholder="Kid's Name" required value="">
+        <h1>Who's going?</h1>
+        <input id="kidsName" type="text" placeholder="Kid's First Name" required value="">
         <button onclick="KidsSubmit()">Submit</button>
         <p></p><br>
+        <p>Already a member? Login here.</p>
 
         <!-- INPUT to test the POST route to the DB -->
         <input id="userName" type="text" placeholder="User Name" required value="">
         <button onclick="createUser()">Submit</button>
       </form>
+
       <p></p><br>
-      <!-- <button onclick="/packlist.html">NEXT</button> -->
-      <a href="items.html" class="w3-btn w3-blue">NEXT</a>
+      <button onclick="window.location.href='packinglist.html'">NEXT</button>
     </div>
     <!-- comment out the script line in order to test route -->
     <!-- <script src="localstoragescript.js"></script> -->

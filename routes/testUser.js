@@ -47,7 +47,10 @@ router.post('/', function(req, res, next) {
     .then((result) => {
       let insertedRecord = result[0]
       console.log('data', insertedRecord)
-      // conclude the route with res.send
+
+      //create knapsak with KNEX, using the user id
+
+      // create packing list
       res.send(insertedRecord)
     })
 
