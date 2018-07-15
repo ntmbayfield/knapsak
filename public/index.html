@@ -2,35 +2,53 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Knapsak - A visual packing list for kids</title>
+    <!-- importing styles -->
     <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
     <link rel="style" href="stylesheets/style.css">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
 
-  <body class="w3-container" style="background-color:dodgerblue;">
-    <div>
+  <body class="w3-container" style="background-color:green;">
+    <div class="center">
       <h2>testing stylesheets load...</h2>
       <button type="button" style="position: absolute; right: 0;">LogIn</button>
-      <img src="images/knapsak_logo.png" alt="Knapsak Logo" style="width:50%" class="center">
+      <img src="images/knapsak_logo.png" alt="Knapsak Logo" style="width:50%">
 
-      <form>
+      <!-- <form>
         <h1>Who's going?</h1>
         <input id="kidsName" type="text" placeholder="Kid's First Name" required value="">
         <button onclick="KidsSubmit()">Submit</button>
         <p></p><br>
-        <p>Already a member? Login here.</p>
+        <p>Already a member? Login here.</p> -->
+      <!-- </form> -->
 
-        <!-- INPUT to test the POST route to the DB -->
-        <input id="userName" type="text" placeholder="User Name" required value="">
-        <button onclick="createUser()">Submit</button>
+      <form class="form-inline">
+        <h1>Who's going?</h1>
+        <div class="input-group">
+          <input id="kidsName" type="text" class="form-control" size="40" placeholder="Child's First Name" required value="">
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-danger">Submit</button>
+          </div>
+        </div>
+        <p></p>
+        <p>Already a member? Login here.</p>
       </form>
 
+      <!-- INPUT to test the POST route to the DB -->
+      <input id="userName" type="text" placeholder="User Name" required value="">
+      <button onclick="createUser()">Submit</button>
+
+
       <p></p><br>
-      <button onclick="window.location.href='packinglist.html'">NEXT</button>
+      <button onclick="window.location.href='items.html'">NEXT</button>
     </div>
     <!-- comment out the script line in order to test route -->
-    <!-- <script src="localstoragescript.js"></script> -->
-    <script src="apicalls/createuser.js"></script>
+    <script src="localstoragescript.js"></script>
+    <!-- <script src="apicalls/createuser.js"></script> -->
   </body>
 </html>

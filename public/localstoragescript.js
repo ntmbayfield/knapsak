@@ -10,11 +10,9 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   //get value from input and place in local storage
   console.log('input.value', input.value)
+  localStorage.setItem('kidName_localstorage', JSON.stringify(input.value));
+  console.log('Json stringify>>', JSON.stringify(input.value));
 
-  localStorage.setItem('kids', JSON.stringify(input.value));
-  JSON.parse(localStorage.getItem('kids'))
-
-  //log to see values stored in local storage
-  console.log('Json stringify', JSON.stringify(input.value));
-  console.log('local storage', JSON.parse(localStorage.getItem('kids')));
+  //log value from local storage
+  console.log('local storage>>', JSON.parse(localStorage.getItem('kidName_localstorage')));
 });
