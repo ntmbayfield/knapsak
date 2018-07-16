@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body>
-  <div class="w3-container w3-black">
-    <p></p>
-    <h1><img src="images/knapsak_logo_long.png" alt="knapsak_lglogo" style="width:25%">Add items to your Knapsak</h1>
-  </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- ================  Add bootstrap styles ========================= -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <title>Fill Your Knapsak</title>
+  </head>
+
+  <body>
+    <style>
+      body {
+        font-family: 'Gaegu', Courier, sans-serif;
+      }
+      h2 {
+        padding-top: 15px;
+      }
+    </style>
+
+    <nav class="navbar navbar-light bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="images/knapsak_logo_long.png" width="200" height="65" alt="Knapsak logo">
+      </a>
+    </nav>
+
+
+    <div class="w3-container">
+      <p></p>
+      <h1>Add items to your Knapsak</h1>
+    </div>
 
   <!-- <div class="row">
     <div class="col-sm-9">
@@ -25,10 +47,10 @@
   <div class="w3-row-padding w3-margin-top">
 
     <!-- CARD =================== -->
-    <div class="w3-third">
+    <div class="w3-quarter">
       <div class="w3-card-8 w3-blue" style="width:95%">
         <div class="w3-container w3-center">
-          <h3>T-Shirt <span id="shirtsCount" class="w3-badge">0</span></h3>
+          <h2>T-Shirt <span id="shirtsCount" class="w3-badge">0</span></h2>
           <!-- <input type="text" id="shirtCount" value="0"> -->
           <!-- <button type="text" id="shirtCount" value="0">0</button> -->
 
@@ -44,10 +66,10 @@
 
 
     <!-- CARD =================== -->
-    <div class="w3-third">
+    <div class="w3-quarter">
       <div class="w3-card-8 w3-blue" style="width:95%">
         <div class="w3-container w3-center">
-          <h3>Shorts <span id="shortsCount" class="w3-badge">0</span></h3>
+          <h2>Shorts <span id="shortsCount" class="w3-badge">0</span></h2>
           <img src="images/shorts.png" alt="shorts" style="width:80%">
 
             <div class="w3-section">
@@ -59,10 +81,10 @@
     </div>
 
     <!-- CARD =================== -->
-    <div class="w3-third">
+    <div class="w3-quarter">
       <div class="w3-card-8 w3-blue" style="width:95%">
         <div class="w3-container w3-center">
-          <h3>Socks <span id="socksCount" class="w3-badge">0</span></h3>
+          <h2>Socks <span id="socksCount" class="w3-badge">0</span></h2>
           <img src="images/socks.png" alt="socks" style="width:80%">
 
             <div class="w3-section">
@@ -78,10 +100,10 @@
   <div class="w3-row-padding w3-margin-top">
 
     <!-- CARD =================== -->
-    <div class="w3-third">
+    <div class="w3-quarter">
       <div class="w3-card-8 w3-blue" style="width:95%">
         <div class="w3-container w3-center">
-          <h3>Undies <span id="undiesCount" class="w3-badge">0</span></h3>
+          <h2>Undies <span id="undiesCount" class="w3-badge">0</span></h2>
           <img src="images/undies_boys.png" alt="undies-boy" style="width:80%">
 
             <div class="w3-section">
@@ -93,10 +115,10 @@
     </div>
 
     <!-- CARD =================== -->
-    <div class="w3-third">
+    <div class="w3-quarter">
       <div class="w3-card-8 w3-blue" style="width:95%">
         <div class="w3-container w3-center">
-          <h3>Jacket <span id="jacketCount" class="w3-badge">0</span></h3>
+          <h2>Jacket <span id="jacketCount" class="w3-badge">0</span></h2>
           <img src="images/jacket.png" alt="jacket" style="width:80%">
 
             <div class="w3-section">
@@ -108,10 +130,10 @@
     </div>
 
     <!-- CARD =================== -->
-    <div class="w3-third">
+    <div class="w3-quarter">
       <div class="w3-card-8 w3-blue" style="width:95%">
         <div class="w3-container w3-center">
-          <h3>Item <span id="itemCount" class="w3-badge">0</span></h3>
+          <h2>Item <span id="itemCount" class="w3-badge">0</span></h2>
           <img src="images/tshirt.png" alt="t-shirt" style="width:80%">
 
             <div class="w3-section">
@@ -127,6 +149,13 @@
     </div>
 
     <script src="items.js"></script>
+
+    <!-- ================  Add bootstrap scripts ========================= -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </body>
 
 </html>

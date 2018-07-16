@@ -14,35 +14,42 @@
   </head>
 
   <body class="w3-container" style="background-color:green;">
-    <div class="center">
-      <h2>testing stylesheets load...</h2>
-      <button type="button" style="position: absolute; right: 0;">LogIn</button>
-      <img src="images/knapsak_logo.png" alt="Knapsak Logo" style="width:50%">
 
-      <!-- <form>
-        <h1>Who's going?</h1>
-        <input id="kidsName" type="text" placeholder="Kid's First Name" required value="">
-        <button onclick="KidsSubmit()">Submit</button>
-        <p></p><br>
-        <p>Already a member? Login here.</p> -->
-      <!-- </form> -->
+  <!-- ********* Adding style in html CSS Styles NOT WORKING ************************** -->
+    <style>
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        width: 40%;
+      }
+      h1 {
+        font-family: 'Gaegu', Courier, sans-serif;
+      }
+    </style>
+
+    <div class="center">
+      <!-- <button type="button" style="position: absolute; right: 0;">LogIn</button> -->
+      <img src="images/knapsak_logo.png" alt="Knapsak Logo" style="width:100%">
 
       <form class="form-inline">
         <h1>Who's going?</h1>
         <div class="input-group">
-          <input id="kidsName" type="text" class="form-control" size="40" placeholder="Child's First Name" required value="">
+          <input id="kidsName" type="text" class="form-control" size="35" placeholder="Child's First Name" required value="">
           <div class="input-group-btn">
             <button type="submit" class="btn btn-danger">Submit</button>
           </div>
         </div>
         <p></p>
-        <p>Already a member? Login here.</p>
+        <p>Already a member? <a href="login.html">Login here.</a></p>
       </form>
 
       <!-- INPUT to test the POST route to the DB -->
-      <input id="userName" type="text" placeholder="User Name" required value="">
+      <br>
+      <input id="userName" type="text"  size="33" placeholder="User Name" required value="">
       <button onclick="createUser()">Submit</button>
-
 
       <p></p><br>
       <button onclick="window.location.href='items.html'">NEXT</button>
