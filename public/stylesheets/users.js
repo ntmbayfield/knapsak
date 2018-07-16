@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
   })
 });
 
-/* GET all listings for a single user*/
+/* GET listing for a single user*/
 router.get('/:userid', function(req, res, next) {
   //USE KNEX TO GET A SPECIFIC USER
   knex('users')
