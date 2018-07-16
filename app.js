@@ -14,9 +14,12 @@ const knapsaksRouter = require('./routes/knapsaks');
 const usersRouter = require('./routes/users');
 const itemsRouter = require('./routes/items');
 const packing_listsRouter = require('./routes/packing_lists');
+const cors = require('cors');
 
 const app = express();
 // app.use(bodyParser.json({ type: 'application/json'}));
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
