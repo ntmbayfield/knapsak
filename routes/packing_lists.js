@@ -56,7 +56,7 @@ router.post('/new', function(req, res, next) {
   let packing_listInfo = {
     knapsak_id: req.body.knapsakid,
     item_id: req.body.itemid,
-    quantity: req.body
+    quantity: req.body.quantity
   };
   knex('packing_lists')
     .insert(packing_listInfo)
