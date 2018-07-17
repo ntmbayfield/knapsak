@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Knapsak - A visual packing list</title>
+    <!-- <script src="images/knapsak_logo.png"></script> -->
+  </head>
+
+  <body class="body" style="background-color:#36B921">
+
+<!-- *****************************************************************
+  NAV SECTION
+********************************************************************** -->
+    <div class="w-container">
+      <a href="#" class="brand w-nav-brand"></a>
+        <nav role="navigation" class="w-nav-menu">
+          <a href="/" class="nav-link w-nav-link w--current">HOME</a>
+          <a href="/login" class="w-nav-link">LOG IN</a>
+        </nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+
+<!-- *****************************************************************
+  CREATE SECTION
+********************************************************************** -->
+
+    <div id="index-container" class="container-3 w-container">
+      <div class="row-3 w-row">
+        <div class="w-col w-col-6" align="center">
+          <img src="images/knapsak_logo.png" width="619" height="500" class="image-2"></div>
+        <div class="w-col w-col-6">
+          <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
+          <div class="w-form"align="center">
+            <form id="email-form" name="email-form" data-name="Email Form" novalidate>
+              <label for="name">WHO&#x27;S GOING?</label>
+                <input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required=""><br>
+              <label for="knapsak-description">WHERE ARE YOU GOING?</label>
+                <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required=""><br><p></p>
+              <input type="button" value="Create My Knapsak!" data-wait="Please wait..." class="create-knapsak-button w-button" id="createKnapsakButton">
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
