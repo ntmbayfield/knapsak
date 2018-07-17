@@ -23,6 +23,7 @@ axios.get(`${baseURL}/items`)
       card.appendChild(imageNode);
       createKnapsakArea.appendChild(card);
     }
+
 });
 
 document.getElementById('createKnapsakButton').addEventListener('click', () => {

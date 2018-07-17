@@ -2,14 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Knapsak - A visual packing list</title>
+    <script src="images/knapsak_logo.png"></script>
   </head>
 
-  <body class="body">
+  <body class="body" style="background-color:#36B921">
 
-    <div class="w-container"><a href="#" class="brand w-nav-brand"></a>
-      <nav role="navigation" class="w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">HOME</a><a href="/login" class="w-nav-link">LOG IN</a></nav>
+<!---------------------------NAV BAR -------------------->
+    <div class="w-container">
+      <a href="#" class="brand w-nav-brand"></a>
+        <nav role="navigation" class="w-nav-menu">
+          <a href="/" class="nav-link w-nav-link w--current">HOME</a>
+          <a href="/login" class="w-nav-link">LOG IN</a>
+        </nav>
       <div class="w-nav-button">
         <div class="w-icon-nav-menu"></div>
       </div>
@@ -24,9 +29,9 @@
           <div class="w-form">
             <form id="email-form" name="email-form" data-name="Email Form" novalidate>
               <label for="name">WHO&#x27;S GOING?</label>
-                <input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required="">
+                <input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required=""><br>
               <label for="knapsak-description">WHERE ARE YOU GOING?</label>
-                <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
+                <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required=""><br><p></p>
               <input type="button" value="Create My Knapsak!" data-wait="Please wait..." class="create-knapsak-button w-button" id="createKnapsakButton">
           </form>
         </div>
@@ -55,14 +60,14 @@
       <div class="w-container">
         <div class="w-row">
           <div class="w-col w-col-6">
-            <ul class="unordered-list-14 w-list-unstyled">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+            <ul class="unordered-list-14 w-list-unstyled" id="V"
+              <li>Socks - Quantity=3</li>
+              <li>Pajamas - Quantity=2</li>
+              <li>Underwear Girls - Quantity: 3</li>
+              <li>Skirts - Quantity: 2</li>
+              <li>Jeans - Quantity: 1</li>
+              <li>Jackets - Quantity: 1</li>
+              <li>T-Shirts - Quantity: 3</li>
             </ul>
           </div>
           <div class="column-9 w-col w-col-6">

@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('items').insert([
-        {id: 1, itemName: 'underwear - boys', image: "https://image.ibb.co/ef03Gy/001_underwear_boys.png"},
+        {id: 1, itemName: 'underwear - boys', image: "https://image.ibb.co/ef03Gy/001_underwear_boys.png"}, 
         {id: 2, itemName: 'underwear - girls', image: "https://image.ibb.co/de3epJ/002_underwear_girls.png"},
         {id: 3, itemName: 'undershirts', image: "https://image.ibb.co/huWM3d/003_undershirt.png"},
         {id: 4, itemName: 'socks', image: "https://image.ibb.co/nCe8id/004_socks.png"},
