@@ -2,6 +2,7 @@ const baseURL = 'http://localhost:3333';
 
 document.querySelector('#createKnapsakButton').addEventListener('click', () => {
   let kidsName = document.querySelector('#name-input').value
+  console.log('hello world');
   let tripTitle = document.querySelector('#knapsak-description-input').value
 
   localStorage.setItem('kidsName', JSON.stringify(kidsName));

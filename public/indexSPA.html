@@ -13,37 +13,41 @@
           $("#user-login-div").hide()
        });
     </script>
-
-
-    <title>Knapsak App</title>
+    <title>Knapsak- A visual packing list</title>
   </head>
-  <body class="body">
-  <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav">
-    <div class="w-container"><a href="#" class="brand w-nav-brand"></a>
-      <nav role="navigation" class="w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">HOME</a><a href="/login" class="w-nav-link">LOG IN</a></nav>
-      <div class="w-nav-button">
-        <div class="w-icon-nav-menu"></div>
+
+  <body class="body" style="background-color:#36B921;">
+    <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav">
+      <div class="w-container"><a href="#" class="brand w-nav-brand"></a>
+        <nav role="navigation" class="w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">HOME</a><a href="/login" class="w-nav-link">LOG IN</a></nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="mainDiv" class="maindiv">
-      <div id="index-container" class="container-3 w-container">
-        <div class="row-3 w-row">
-          <div class="w-col w-col-6"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="619" height="100" class="image-2"></div>
-          <div class="w-col w-col-6">
-            <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
-            <div class="w-form">
-              <form id="create-new-knapsak-form" name="create-new-knapsak-form" data-name="Create New Knapsak Form" data-redirect="/packinglist" redirect="/packinglist">
-                <label for="name">WHO&#x27;S GOING?</label>
-                  <input type="text" class="w-input" maxlength="256" autofocus="true" name="name-input" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required="">
-                <label for="knapsak-description">WHERE ARE YOU GOING?</label>
-                  <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
-                <input type="submit" value="Create My Knapsak!" data-wait="Please wait..." class="create-knapsak-button w-button" id="createKnapsakButton" >
-            </form>
+
+  <!-- *****************************************************************
+    CREATE SECTION
+  ********************************************************************** -->
+    <div id="mainDiv" class="maindiv" style="font-size: 24px">
+        <div id="index-container" class="container-3 w-container">
+          <div class="row-3 w-row">
+            <div class="w-col w-col-6" align="center"><img src="images/knapsak_logo.png" width="619" height="500" class="image-2"></div>
+            <div class="w-col w-col-6">
+              <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
+              <div class="w-form" align="center">
+                <form id="create-new-knapsak-form" name="create-new-knapsak-form" data-name="Create New Knapsak Form" data-redirect="/packinglist" redirect="/packinglist">
+                  <label for="name">WHO&#x27;S GOING?</label>
+                    <input type="text" class="w-input" maxlength="256" autofocus="true" name="name-input" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required=""><br>
+                  <label for="knapsak-description">WHERE ARE YOU GOING?</label>
+                    <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
+                    <br><p></p>
+                  <input type="submit" value="Create My Knapsak!" data-wait="Please wait..." class="create-knapsak-button w-button" id="createKnapsakButton" >
+              </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
 
       <div id="create-knapsak-div">
@@ -121,6 +125,10 @@
     </div>
   </div>
 
+  <!-- *****************************************************************
+    REVIEW SECTION
+  ********************************************************************** -->
+
   <div id="review-knapsak-div">
     <div>
       <div class="w-container">
@@ -154,6 +162,10 @@
     </div>
   </div>
 
+  <!-- *****************************************************************
+    SIGN-UP SECTION
+  ********************************************************************** -->
+
   <div id="signup-div">
     <div>
       <div class="w-container">
@@ -174,6 +186,10 @@
       </div>
     </div>
   </div>
+
+  <!-- *****************************************************************
+    USER-DASHBOARD SECTION
+  ********************************************************************** -->
 
   <div id="user-dashboard-div">
     <div>
@@ -200,6 +216,10 @@
     </div>
   </div>
 
+  <!-- *****************************************************************
+    SUCCESS SIGN-UP SECTION
+  ********************************************************************** -->
+
   <div id="success-signup-div">
     <div>
       <div class="w-container">
@@ -207,6 +227,10 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p><a id="get-user-dashboard-link">Click here to go to your dashboard!</a></div>
     </div>
   </div>
+
+  <!-- *****************************************************************
+    USER LOGIN SECTION
+  ********************************************************************** -->
 
   <div id="user-login-div">
     <div>
