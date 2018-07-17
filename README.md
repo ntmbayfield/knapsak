@@ -1,11 +1,8 @@
-<h3 align="center">Knapsak -- A Visual Packing Lists for Kids</h3>
+# Knapsak - A Visual Packing Lists for Kids
 
-<div align="center" style="margin-bottom: 25px"><img width='225px' alt="knapsak_logo" src="public/images/knapsak_logo.png"/></div>
+![Knapsak Logo](/public/images/knapsak_logo.png)
 
-<!-- <a href=""></a><a href=""></a> -->
-<p style='margin-left: 50px'></p>
-
-**The Problem:**
+## The Problem ##
 
 "We are going to grandma and grandpa's. Pack up!"
 
@@ -20,14 +17,12 @@ for the snowboarding week in the mountains or a knapsak for visiting grandparent
 
 Pack up and let's go!
 
+## Screenshots
+
 ---
 
 Built by @ntmbayfield and @hyperrex and @CorriMori for their Q2 Project at Galvanize’s Web Development Immersive.
 
 
-<h3 align="center">Screenshots</h3>
 
-<div align="center">
-  <img src="public/images/socks.png"/>
-  <br></br>
-</div>
+![Knapsak Socks](/public/images/socks.png)
