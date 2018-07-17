@@ -20,6 +20,10 @@ for the snowboarding week in the mountains or a knapsak for visiting grandparent
 
 Pack up and let's go!
 
+---
+
+Built by @ntmbayfield and @hyperrex and @CorriMori for their Q2 Project at Galvanize’s Web Development Immersive.
+
 
 <h3 align="center">Screenshots</h3>
 
