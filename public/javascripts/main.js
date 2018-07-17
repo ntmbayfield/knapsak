@@ -1,6 +1,5 @@
 const baseURL = 'http://localhost:3333';
 
-//GET
 
 //GET A SINGLE USER BY ID
 document.querySelector('#login-submit-button').addEventListener('click', () => {

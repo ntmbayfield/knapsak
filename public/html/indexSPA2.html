@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body class="body">
+
+    <div class="w-container"><a href="#" class="brand w-nav-brand"></a>
+      <nav role="navigation" class="w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">HOME</a><a href="/login" class="w-nav-link">LOG IN</a></nav>
+      <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+      </div>
+    </div>
+
+
+    <div id="index-container" class="container-3 w-container">
+      <div class="row-3 w-row">
+        <div class="w-col w-col-6"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="619" height="100" class="image-2"></div>
+        <div class="w-col w-col-6">
+          <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
+          <div class="w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" novalidate>
+              <label for="name">WHO&#x27;S GOING?</label>
+                <input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required="">
+              <label for="knapsak-description">WHERE ARE YOU GOING?</label>
+                <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
+              <input type="button" value="Create My Knapsak!" data-wait="Please wait..." class="create-knapsak-button w-button" id="createKnapsakButton">
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="create-knapsak-div">
+      <div class="container-6 w-container">
+        <h1 class="heading">BASICS</h1>
+        <ul class="basics-create-list">
+          <li class="list-item-10">‍</li>
+          <li class="list-item-11"></li>
+          <li class="list-item-12"></li>
+          <li class="list-item-14"></li>
+        </ul>
+      </div>
+      <div class="w-container">
+        <h1>BOTTOMS</h1>
+        <ul class="bottoms-create-list">
+          <li class="list-item-30"></li>
+          <li class="list-item-31"></li>
+          <li class="list-item-92"></li>
+          <li class="list-item-93"></li>
+          <li class="list-item-94"></li>
+        </ul>
+      </div>
+      <div class="w-container">
+        <h1>TOPS</h1>
+        <ul class="tops-create-list">
+          <li class="list-item-32"></li>
+          <li class="list-item-33"></li>
+          <li class="list-item-35"></li>
+          <li class="list-item-36"></li>
+          <li class="list-item-85"></li>
+          <li class="list-item-86">‍</li>
+          <li class="list-item-87"></li>
+        </ul>
+      </div>
+      <div class="w-container">
+        <h1>SHOES</h1>
+        <ul class="shoes-create-list">
+          <li class="list-item-38"></li>
+          <li class="list-item-39"></li>
+          <li class="list-item-40"></li>
+          <li class="list-item-41"></li>
+        </ul>
+      </div>
+      <div class="w-container">
+        <h1>PERSONAL</h1>
+        <ul class="personal-create-list">
+          <li class="list-item-59"></li>
+          <li class="list-item-60"></li>
+          <li class="list-item-61"></li>
+        </ul>
+      </div>
+      <div class="w-container">
+        <h1>SWIM STUFF</h1>
+        <ul class="swim-create-list">
+          <li class="list-item-89"></li>
+          <li class="list-item-90"></li>
+          <li class="list-item-91"></li>
+        </ul>
+      </div>
+    <div class="section">
+      <div class="container-2 w-container">
+        <input type="button" value="Review Packing List" id="reviewKnapsakButton" class="review-packing-list-button w-button">
+      </div>
+    </div>
+  </div>
+
+
+  <div id="review-knapsak-div">
+    <div>
+      <div class="w-container">
+        <h3>Review your Knapsak:</h3>
+        <div class="text-block">Lolly T. Bop&#x27;s Knapsak for trip to Timbuktu</div>
+      </div>
+    </div>
+    <div>
+      <div class="w-container">
+        <div class="w-row">
+          <div class="w-col w-col-6">
+            <ul class="unordered-list-14 w-list-unstyled">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="column-9 w-col w-col-6">
+            <div class="div-block-8"></div><a href="/packinglist" class="link-19 w-button" id="editPackingListButton">EDIT LIST</a>
+            <div class="div-block-6"></div><a class="link-20 w-button" id="printButton">PRINT</a>
+            <div class="div-block-7"><br>‍</div>
+            <div>To Save This Packing List, Please register for a free account!</div>
+              <a href="/createaccount" class="link-21 w-button" id="createAccountButton">CREATE ACCOUNT</a>
+              <a href="/login" class="link-22 w-button">SAVE</a>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="signup-div">
+    <div>
+      <div class="w-container">
+        <h1>Sign Up for a FREE Knapsak account!</h1>
+      </div>
+    </div>
+    <div>
+      <div class="w-container">
+        <div class="w-form">
+          <form id="email-form" name="email-form" data-name="Email Form" method="get" data-redirect="/successsignup" redirect="/successsignup"><label for="name">Name:</label><input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter your name" id="name" required=""><label for="email">Email Address:</label><input type="text" class="w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required=""><label>Password</label><input type="password" class="w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" id="field" required=""><input type="submit" value="Create My Free Account" data-wait="Please wait..." class="w-button"></form>
+          <div class="w-form-done">
+            <div>Thank you! Your submission has been received!</div>
+          </div>
+          <div class="w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="user-dashboard-div">
+    <div>
+      <div class="w-container">
+        <h1>Hi User!</h1>
+      </div>
+    </div>
+    <div>
+      <div class="w-container">
+        <h3>Create New Knapsak </h3><a href="/packinglist" id="create-knapsak-for-registered-user-link">Make a new knapsak</a></div>
+    </div>
+    <div>
+      <div class="w-container"><a href="#">Display my saved Knapsaks</a></div>
+    </div>
+    <div>
+      <div class="w-container">
+        <h3>Account Information</h3>
+        <ul>
+          <li><a href="#">Change email address</a></li>
+          <li><a href="#">Change password</a></li>
+          <li><a href="#">Delete Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="success-signup-div">
+    <div>
+      <div class="w-container">
+        <h3>Your Knapsak account was created successfully!</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p><a id="get-user-dashboard-link">Click here to go to your dashboard!</a></div>
+    </div>
+  </div>
+
+  <div id="user-login-div">
+    <div>
+      <div class="w-container">
+        <h3>Log In - Knapsak App!</h3>
+      </div>
+    </div>
+    <div>
+      <div class="w-container">
+        <div class="w-form">
+          <form id="wf-form-Log-In-Form" name="wf-form-Log-In-Form" data-name="Log In Form" data-redirect="/userdashboard" redirect="/userdashboard" class="form-2"><label for="name">Email Address</label><input type="email" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter your email address" id="name" required=""><label for="password">Password</label><input type="password" class="w-input" maxlength="256" name="password" data-name="password" placeholder="Enter your password" id="password" required=""><input type="submit" value="Log In!" data-wait="Please wait..." class="submit-button w-button"></form>
+          <div class="w-form-done">
+            <div>Thank you! Your submission has been received!</div>
+          </div>
+          <div class="w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="indexSPA.js" type="text/javascript" defer></script>
+  <script>
+       $(function(){
+          $("#create-knapsak-div").hide()
+          $("#review-knapsak-div").hide()
+          $("#signup-div").hide()
+          $("#user-dashboard-div").hide()
+          $("#success-signup-div").hide()
+          $("#user-login-div").hide()
+       });
+    </script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+</body>
+</html>

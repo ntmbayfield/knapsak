@@ -2,30 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script>
-       $(function(){
-          $("#create-knapsak-div").hide()
-          $("#review-knapsak-div").hide()
-          $("#signup-div").hide()
-          $("#user-dashboard-div").hide()
-          $("#success-signup-div").hide()
-          $("#user-login-div").hide()
-       });
-    </script>
-
-
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Knapsak App</title>
   </head>
+
   <body class="body">
-  <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav">
-    <div class="w-container"><a href="#" class="brand w-nav-brand"></a>
-      <nav role="navigation" class="w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">HOME</a><a href="/login" class="w-nav-link">LOG IN</a></nav>
-      <div class="w-nav-button">
-        <div class="w-icon-nav-menu"></div>
+    <div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav">
+      <div class="w-container"><a href="#" class="brand w-nav-brand"></a>
+        <nav role="navigation" class="w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">HOME</a><a href="/login" class="w-nav-link">LOG IN</a></nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
       </div>
     </div>
-  </div>
+
   <div id="mainDiv" class="maindiv">
       <div id="index-container" class="container-3 w-container">
         <div class="row-3 w-row">
@@ -33,12 +23,12 @@
           <div class="w-col w-col-6">
             <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
             <div class="w-form">
-              <form id="create-new-knapsak-form" name="create-new-knapsak-form" data-name="Create New Knapsak Form" data-redirect="/packinglist" redirect="/packinglist">
+              <form id="create-new-knapsak-form" name="create-new-knapsak-form" data-name="Create New Knapsak Form" novalidate>
                 <label for="name">WHO&#x27;S GOING?</label>
-                  <input type="text" class="w-input" maxlength="256" autofocus="true" name="name-input" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required="">
+                  <input type="text" class="w-input" maxlength="256" name="nameInput" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" >
                 <label for="knapsak-description">WHERE ARE YOU GOING?</label>
-                  <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
-                <input type="submit" value="Create My Knapsak!" data-wait="Please wait..." class="create-knapsak-button w-button" id="createKnapsakButton" >
+                  <input type="text" class="w-input" maxlength="256" name="knapsakDescription" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" >
+                <input id="createKnapsakButton" type="button" value="Create My Knapsak!"   class="create-knapsak-button w-button">
             </form>
             </div>
           </div>
@@ -47,7 +37,6 @@
 
 
       <div id="create-knapsak-div">
-      <div>
         <div class="container-6 w-container">
           <h1 class="heading">BASICS</h1>
           <ul class="basics-create-list">
@@ -57,8 +46,6 @@
             <li class="list-item-14"></li>
           </ul>
         </div>
-      </div>
-      <div>
         <div class="w-container">
           <h1>BOTTOMS</h1>
           <ul class="bottoms-create-list">
@@ -116,10 +103,11 @@
         </div>
       </div>
       <div class="section">
-        <div class="container-2 w-container"><a href="/reviewlist" class="review-packing-list-button w-button">Review Packing List</a></div>
+        <div class="container-2 w-container"><a href="/reviewlist" class="review-knapsak-button w-button" id="reviewKnapsakButton">Review Packing List</a></div>
       </div>
     </div>
   </div>
+
 
   <div id="review-knapsak-div">
     <div>
@@ -133,21 +121,17 @@
         <div class="w-row">
           <div class="w-col w-col-6">
             <ul class="unordered-list-14 w-list-unstyled">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>item 1:, quantity: 3</li>
+              <li>item 2: quantity: 1</li>
+              <li>item 3: quantity: 25</li>
             </ul>
           </div>
           <div class="column-9 w-col w-col-6">
             <div class="div-block-8"></div><a href="/packinglist" class="link-19 w-button">EDIT LIST</a>
             <div class="div-block-6"></div><a class="link-20 w-button">PRINT</a>
             <div class="div-block-7"><br>‍</div>
-            <div>To Save This Packing List, Please register for a free account!</div><a href="/createaccount" class="link-21 w-button">CREATE ACCOUNT</a><a href="/login" class="link-22 w-button">SAVE</a>
-            <div></div>
+            <div>To Save This Packing List, Please register for a free account!</div><a href="/createaccount" class="link-21 w-button">CREATE ACCOUNT</a><a href="/login" class="link-22 w-button">SAVE</a><div>
+            </div>
           </div>
         </div>
       </div>
@@ -217,7 +201,7 @@
     <div>
       <div class="w-container">
         <div class="w-form">
-          <form id="wf-form-Log-In-Form" name="wf-form-Log-In-Form" data-name="Log In Form" data-redirect="/userdashboard" redirect="/userdashboard" class="form-2"><label for="name">Email Address</label><input type="email" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter your email address" id="name" required=""><label for="password">Password</label><input type="password" class="w-input" maxlength="256" name="password" data-name="password" placeholder="Enter your password" id="password" required=""><input type="submit" value="Log In!" data-wait="Please wait..." class="submit-button w-button"></form>
+          <form id="wf-form-Log-In-Form" name="wf-form-Log-In-Form" data-name="Log In Form" data-redirect="/userdashboard" redirect="/userdashboard" class="form-2"><label for="name">Email Address</label><input type="email" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter your email address" id="name"><label for="password">Password</label><input type="password" class="w-input" maxlength="256" name="password" data-name="password" placeholder="Enter your password" id="password" ><input type="submit" value="Log In!" data-wait="Please wait..." class="submit-button w-button"></form>
           <div class="w-form-done">
             <div>Thank you! Your submission has been received!</div>
           </div>
@@ -228,9 +212,20 @@
       </div>
     </div>
   </div>
+</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="indexSPA.js" type="text/javascript"></script>
+  <script>
+     $(function(){
+        $("#create-knapsak-div").hide()
+        $("#review-knapsak-div").hide()
+        $("#signup-div").hide()
+        $("#user-dashboard-div").hide()
+        $("#success-signup-div").hide()
+        $("#user-login-div").hide()
+     });
+  </script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>

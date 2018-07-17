@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
-var itemsArray;
+
 
 //GET - all items
 router.get('/', (req, res, next) => {
