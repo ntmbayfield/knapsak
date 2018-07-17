@@ -10,13 +10,17 @@ axios.get(`${baseURL}/items`)
 
     for (let i=0; i < itemsArray.length; i++) {
       let card = document.createElement('div');
-      let quantity = document.createElement('p');
-      let image = document.createElement('img');
+      let quantityNode = document.createElement('p');
+      let imageNode = document.createElement('img');
       let itemNameNode = document.createElement('p');
-        quantity.innerHTML = 0;
-        itemNameNode.innerHTML = itemsArray[i].itemName
+        quantityNode.innerHTML = 0;
+        itemNameNode.innerHTML = itemsArray[i].itemName;
+        imageNode.src = itemsArray[i].image;
+        imageNode.setAttribute('height', '210');
+        imageNode.setAttribute('width', '210');
       card.appendChild(itemNameNode);
-      // card.appendChild(itemsArray[i].image);
+      card.appendChild(quantityNode);
+      card.appendChild(imageNode);
       createKnapsakArea.appendChild(card);
     }
 });
