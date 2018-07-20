@@ -2,54 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-
-    <script src="images/knapsak_logo.png"></script>
-    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <!-- ================  Add bootstrap styles ========================= -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
-    <title>Knapsak App - A visual packing list generator!/title>
+    <title></title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
-  <body>
+  <body class="body">
 
-    <style>
-      body {
-        font-family: 'Gaegu', Courier, sans-serif;
-      }
-      h2 {
-        padding-top: 15px;
-      }
-    </style>
-
-    <nav class="navbar navbar-light bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="images/knapsak_logo_long.png" width="200" height="65" alt="Knapsak logo">
-      </a>
-    </nav>
-
-
-    <div class="w3-container">
-      <p></p>
-      <h1>Add items to your Knapsak</h1>
-    </div>
-
-
-
-</html>
-</head>
-
-<body class="body" style="background-color:#36B921">
-
-<!---------------------------NAV BAR -------------------->
-    <div class="w-container">
-      <a href="#" class="brand w-nav-brand"></a>
-        <nav role="navigation" class="w-nav-menu">
-          <a href="/" class="nav-link w-nav-link w--current">HOME</a>
-          <a href="/login" class="w-nav-link">LOG IN</a>
-        </nav>
+    <div class="w-container"><a href="#" class="brand w-nav-brand"></a>
+      <nav role="navigation" class="w-nav-menu"><a href="/" class="nav-link w-nav-link w--current">HOME</a><a href="/login" class="w-nav-link">LOG IN</a></nav>
       <div class="w-nav-button">
         <div class="w-icon-nav-menu"></div>
       </div>
@@ -62,12 +22,12 @@
         <div class="w-col w-col-6">
           <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
           <div class="w-form">
-            <form id="knapsak-details" name="knapsak-details-form" data-name="Knapsak-Details Form" novalidate>
+            <form id="email-form" name="email-form" data-name="Email Form" novalidate>
               <label for="name">WHO&#x27;S GOING?</label>
-                <input type="text" class="w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required=""><br>
+                <input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required="">
               <label for="knapsak-description">WHERE ARE YOU GOING?</label>
-                <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required=""><br><p></p>
-              <input type="button" value="Create My Knapsak!" data-wait="Please wait..." class="create-knapsak-button w-button" id="createKnapsakButton">
+                <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
+              <input type="button" value="Create My Knapsak!" id="createKnapsakButton" data-wait="Please wait..." class="create-knapsak-button w-button">
           </form>
         </div>
         </div>
@@ -85,34 +45,29 @@
 
 
   <div id="review-knapsak-div">
-
     <div>
       <div class="w-container">
         <h3>Review your Knapsak:</h3>
         <div class="text-block">Lolly T. Bop&#x27;s Knapsak for trip to Timbuktu</div>
       </div>
     </div>
-
     <div>
       <div class="w-container">
         <div class="w-row">
           <div class="w-col w-col-6">
-            <ul class="unordered-list-14 w-list-unstyled" id="V"
-              <li>Socks - Quantity=3</li>
-              <li>Pajamas - Quantity=2</li>
-              <li>Underwear Girls - Quantity: 3</li>
-              <li>Skirts - Quantity: 2</li>
-              <li>Jeans - Quantity: 1</li>
-              <li>Jackets - Quantity: 1</li>
-              <li>T-Shirts - Quantity: 3</li>
+            <ul class="unordered-list-14 w-list-unstyled">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
           </div>
           <div class="column-9 w-col w-col-6">
-            <div class="div-block-8"></div>
-              <a href="/packinglist" class="link-19 w-button" id="editPackingListButton">EDIT LIST</a>
-              <br>
-            <div class="div-block-6"></div>
-              <a class="link-20 w-button" id="printButton">PRINT</a><br>
+            <div class="div-block-8"></div><a href="/packinglist" class="link-19 w-button" id="editPackingListButton">EDIT LIST</a>
+            <div class="div-block-6"></div><a class="link-20 w-button" id="printButton">PRINT</a>
             <div class="div-block-7"><br>‍</div>
             <div>To Save This Packing List, Please register for a free account!</div>
               <a href="/createaccount" class="link-21 w-button" id="createAccountButton">CREATE ACCOUNT</a>
@@ -133,15 +88,7 @@
     <div>
       <div class="w-container">
         <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" method="get" data-redirect="/successsignup" redirect="/successsignup">
-            <label for="name">Name:</label>
-              <input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter your name" id="name" required="">
-            <label for="email">Email Address:</label>
-              <input type="text" class="w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required="">
-            <label>Password</label>
-              <input type="password" class="w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" id="field" required="">
-            <input type="submit" value="Create My Free Account" data-wait="Please wait..." class="w-button">
-          </form>
+          <form id="email-form" name="email-form" data-name="Email Form" method="get" data-redirect="/successsignup" redirect="/successsignup"><label for="name">Name:</label><input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter your name" id="name" required=""><label for="email">Email Address:</label><input type="text" class="w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required=""><label>Password</label><input type="password" class="w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" id="field" required=""><input type="submit" value="Create My Free Account" data-wait="Please wait..." class="w-button"></form>
           <div class="w-form-done">
             <div>Thank you! Your submission has been received!</div>
           </div>
@@ -208,7 +155,7 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="index.js" type="text/javascript" defer></script>
+  <script src="./indexSPA.js" type="text/javascript" defer></script>
   <script>
        $(function(){
           $("#create-knapsak-div").hide()
