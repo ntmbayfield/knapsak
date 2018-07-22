@@ -1,16 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Knapsak - A visual packing list</title>
+
     <script src="images/knapsak_logo.png"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="index.css"><
+    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- ================  Add bootstrap styles ========================= -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <title>Knapsak App - A visual packing list generator!/title>
   </head>
 
+  <body>
+
+    <style>
+      body {
+        font-family: 'Gaegu', Courier, sans-serif;
+      }
+      h2 {
+        padding-top: 15px;
+      }
+    </style>
+
+    <nav class="navbar navbar-light bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="images/knapsak_logo_long.png" width="200" height="65" alt="Knapsak logo">
+      </a>
+    </nav>
 
 
+    <div class="w3-container">
+      <p></p>
+      <h1>Add items to your Knapsak</h1>
+    </div>
+
+
+
+</html>
+</head>
+
+<body class="body" style="background-color:#36B921">
+
+<!---------------------------NAV BAR -------------------->
     <div class="w-container">
       <a href="#" class="brand w-nav-brand"></a>
         <nav role="navigation" class="w-nav-menu">
@@ -25,11 +58,11 @@
 
     <div id="index-container" class="container-3 w-container">
       <div class="row-3 w-row">
-        <div class="w-col w-col-6"><img src="https://image.ibb.co/j5cSRy/knapsak_logo.png" width="619" height="600" class="image-2"></div>
+        <div class="w-col w-col-6"><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" width="619" height="100" class="image-2"></div>
         <div class="w-col w-col-6">
           <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
           <div class="w-form">
-            <form id="email-form" name="email-form" data-name="Email Form" novalidate>
+            <form id="knapsak-details" name="knapsak-details-form" data-name="Knapsak-Details Form" novalidate>
               <label for="name">WHO&#x27;S GOING?</label>
                 <input type="text" class="w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required=""><br>
               <label for="knapsak-description">WHERE ARE YOU GOING?</label>
@@ -47,7 +80,6 @@
         <div class="container-2 w-container">
           <input type="button" value="Review Packing List" id="reviewKnapsakButton" class="review-packing-list-button w-button">
         </div>
-        <br>
       </div>
     </div>
 
@@ -76,8 +108,11 @@
             </ul>
           </div>
           <div class="column-9 w-col w-col-6">
-            <div class="div-block-8"></div><a href="/packinglist" class="link-19 w-button" id="editPackingListButton">EDIT LIST</a>
-            <div class="div-block-6"></div><a class="link-20 w-button" id="printButton">PRINT</a>
+            <div class="div-block-8"></div>
+              <a href="/packinglist" class="link-19 w-button" id="editPackingListButton">EDIT LIST</a>
+              <br>
+            <div class="div-block-6"></div>
+              <a class="link-20 w-button" id="printButton">PRINT</a><br>
             <div class="div-block-7"><br>‍</div>
             <div>To Save This Packing List, Please register for a free account!</div>
               <a href="/createaccount" class="link-21 w-button" id="createAccountButton">CREATE ACCOUNT</a>
@@ -98,13 +133,13 @@
     <div>
       <div class="w-container">
         <div class="w-form">
-          <form id="signup-form" name="signup-form" data-name="Signup Form" method="get" data-redirect="/successsignup" redirect="/successsignup"><label for="name">Name:</label>
-            <input type="text" class="w-input" maxlength="256"  name="name" data-name="Name" placeholder="Enter your name" id="name" required="">
+          <form id="email-form" name="email-form" data-name="Email Form" method="get" data-redirect="/successsignup" redirect="/successsignup">
+            <label for="name">Name:</label>
+              <input type="text" class="w-input" maxlength="256" autofocus="true" name="name" data-name="Name" placeholder="Enter your name" id="name" required="">
             <label for="email">Email Address:</label>
-            <input type="text" class="w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required="">
+              <input type="text" class="w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required="">
             <label>Password</label>
-            <input type="password" class="w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" id="field" required="">
-
+              <input type="password" class="w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" id="field" required="">
             <input type="submit" value="Create My Free Account" data-wait="Please wait..." class="w-button">
           </form>
           <div class="w-form-done">
@@ -173,8 +208,6 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <script src="index.js" type="text/javascript" defer></script>
   <script>
        $(function(){
