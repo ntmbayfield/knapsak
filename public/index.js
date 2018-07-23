@@ -14,7 +14,7 @@ axios.get(`${baseURL}/items`)
 
 
     for (let i=0; i < itemsArray.length; i++) {
-      let createKnapsakArea = document.getElementById('create-knapsak-div');
+      let createKnapsakArea = document.getElementById('create-cards-div');
       let card = document.createElement('div');
         card.className = "card";
         card.setAttribute.display = "inline";
@@ -158,9 +158,9 @@ document.getElementById('logIntoMyAccountButtonInLoginDiv').addEventListener('cl
   $("#user-dashboard-div").show();
 });
 
-document.getElementById('logInButtonOnNavBar').addEventListener('click', () => {
+document.getElementById('headerLogInButton').addEventListener('click', () => {
   $("#index-container").hide();
-  $("#nav-bar-div").hide();
+  $("#header-div").hide();
   $("#user-login-div").show();
 });
 

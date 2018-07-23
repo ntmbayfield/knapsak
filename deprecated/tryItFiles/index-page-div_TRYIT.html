@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+      .nav {
+          background-color: green;
+          list-style-type: none;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+      }
+
+      .nav li {
+          display: inline-block;
+          font-size: 20px;
+          padding: 20px;
+          margin: 20px;
+      }
+
+      .nav li input (
+      	margin: 20px;
+      }
+	</style>
+</head>
+<body>
+<div class="w3-row" id="index-page-div">
+<div class="w3-col col-sm-12">
+<ul class="nav">
+  <li>
+  	<img src="https://image.ibb.co/j5cSRy/knapsak_logo.png" class="image-2" id="logoImgForIndexContainer">
+  	<div class="w-form" id="index-div-form">
+       <form id="index-form" name="index-form" data-name="Index Form" novalidate>
+          <label for="name">WHO&#x27;S GOING?</label>
+          <br>
+          <input type="text" class="w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required="">
+          <br>
+          <br>
+          <label for="knapsak-description">WHERE ARE YOU GOING?</label>
+          <br>
+          <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
+          <br>
+      </form>
+    </div>
+    <br>
+    <button class="w3-teal w3-round-large w3-padding-medium" id="createKnapsakButton">Create My Knapsak!</button>
+  </li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

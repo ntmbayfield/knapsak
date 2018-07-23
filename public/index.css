@@ -1,7 +1,17 @@
+/*    INDEX-PAGE-DIV STYLING    */
+.nav {
+  background-color: green;
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 
-
-h2 {
-  padding-top: 15px;
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px;
 }
 
 div {
@@ -41,7 +51,7 @@ div.itemCards {
     text-align: center;
 }
 
-button {
+.card button {
 	  display: inline;
     text-align: center;
     margin: auto;

@@ -3,49 +3,50 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Knapsak - A visual packing list</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="index.css">
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
 
 
   <body>
 
-    <div class="w-container" id="nav-bar-div">
-      <nav role="navigation" class="w-nav-menu">
-        <input type="button" class="nav-link w-nav-link w--current" id="homeButton" value="HOME">
-        <input type="button" class="w-nav-link" id="logInButtonOnNavBar" value="LOG IN">
-      </nav>
-    </div>
-
-    <div id="index-container" class="container-3 w-container">
+    <div id="index-div" class="container-3 w-container">
       <div class="row-3 w-row">
-        <div class="w-col w-col-6">
-          <img src="https://image.ibb.co/j5cSRy/knapsak_logo.png" width="619" height="600" class="image-2">
-        </div>
-        <div class="w-col w-col-6">
-          <div class="div-block-2 w-hidden-small w-hidden-tiny"></div>
-          <div class="w-form">
-            <form id="index-form" name="index-form" data-name="Index Form" novalidate>
-              <label for="name">WHO&#x27;S GOING?</label>
-                <input type="text" class="w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required=""><br>
-              <label for="knapsak-description">WHERE ARE YOU GOING?</label>
-                <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
-              <input type="button" value="Create My Knapsak!" id="createKnapsakButton" data-wait="Please wait..." class="create-knapsak-button w-button">
-          </form>
-        </div>
+        <div class="w-col w-col-12">
+          <ul class="nav">
+            <li>
+            	<img src="https://image.ibb.co/j5cSRy/knapsak_logo.png" class="image-2" id="logoImgForIndexContainer">
+            	<div class="w-form" id="index-div-form">
+                 <form id="index-form" name="index-form" data-name="Index Form" novalidate>
+                    <label for="name">WHO&#x27;S GOING?</label>
+                    <br>
+                    <input type="text" class="w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter kid&#x27;s name" id="name-input" required="">
+                    <br>
+                    <br>
+                    <label for="knapsak-description">WHERE ARE YOU GOING?</label>
+                    <br>
+                    <input type="text" class="w-input" maxlength="256" name="knapsak-description" data-name="knapsak-description" placeholder="Enter trip description" id="knapsak-description-input" required="">
+                    <br>
+                </form>
+              </div>
+              <br>
+              <button class="w3-teal w3-round-large w3-padding-medium" id="createKnapsakButton">Create My Knapsak!</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
 
     <div id="create-knapsak-div">
-      <div class="section">
+      <div id="create-cards-div"></div>
+      <div class="section" id="review-button-div">
         <div class="container-2 w-container">
           <input type="button" value="Review Packing List" id="reviewKnapsakButton" class="review-packing-list-button w-button">
         </div>
-        <br>
       </div>
     </div>
 
@@ -178,6 +179,7 @@
   <script src="index.js" type="text/javascript" defer></script>
   <script>
        $(function(){
+          $("#header-div").hide()
           $("#create-knapsak-div").hide()
           $("#review-knapsak-div").hide()
           $("#signup-div").hide()
