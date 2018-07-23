@@ -1,6 +1,5 @@
-/*    INDEX-PAGE-DIV STYLING    */
+/*    HEADER STYLING      */
 .nav {
-  background-color: green;
   list-style-type: none;
   text-align: center;
   margin: 0;
@@ -10,8 +9,66 @@
 .nav li {
   display: inline-block;
   font-size: 20px;
-  padding: 20px;
-  margin: 20px;
+}
+
+li .navbar-btn {
+  margin-top: 15px;
+}
+
+.navbar-default {
+  background: #f5e946;
+}
+
+#signInButtonFromNav {
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+#navbar-container-div {
+  background: #khaki;
+  align: center;
+  height: 102px;
+  display: inline;
+  padding: 0px;
+  margin:: 0px;
+}
+
+#navbar-logo {
+	height: 102px;
+}
+
+.navbar-right {
+  margin-right: -15px;
+}
+
+.navbar-btn {
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#header-element-div {
+  background-color: khaki;
+  height: 102px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+/*    INDEX-PAGE-DIV STYLING    */
+#logoImgForIndexDiv {
+  width: 550px;
+  height: 450px;
+  margin: auto;
+  pading: 20px;
+}
+
+#index-ul {
+  height: 800px;
 }
 
 div {
@@ -76,4 +133,8 @@ p {
 	  display: inline;
     align: center;
     margin: auto;
+}
+
+#index-ul {
+  background: green;
 }

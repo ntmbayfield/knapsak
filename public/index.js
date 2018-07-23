@@ -14,7 +14,7 @@ axios.get(`${baseURL}/items`)
 
 
     for (let i=0; i < itemsArray.length; i++) {
-      let createKnapsakArea = document.getElementById('create-cards-div');
+      let cardsDiv = document.getElementById('cards-div');
       let card = document.createElement('div');
         card.className = "card";
         card.setAttribute.display = "inline";
@@ -47,7 +47,7 @@ axios.get(`${baseURL}/items`)
       card.appendChild(itemNameNode);
       card.appendChild(imageNode);
       card.appendChild(counterNode);
-      createKnapsakArea.appendChild(card);
+      cardsDiv.appendChild(card);
 
       //defining packingListObj to hold Knapsak contents
       for (let i = 0; i < itemsArray.length; i++) {
@@ -60,6 +60,7 @@ axios.get(`${baseURL}/items`)
 });
 
 document.getElementById('createKnapsakButton').addEventListener('click', () => {
+  console.log('clicked on createKnapsakButton');
   kidsName = document.querySelector('#name-input').value
   tripTitle = document.querySelector('#knapsak-description-input').value
 
@@ -68,16 +69,14 @@ document.getElementById('createKnapsakButton').addEventListener('click', () => {
   localStorage.setItem('tripTitle', JSON.stringify(tripTitle));
   console.log(tripTitle);
 
-  $("#index-container").hide();
+  $("#index-div").hide();
+  $("#header-element-div").show();
   $("#create-knapsak-div").show();
 
   console.log('hide and show executed');
 
 
     let allcards = document.querySelectorAll('div.card');
-
-
-    //@ time of creation generate packingListObj with the keys that correspond to card.p.innerHTML and values===0
 
     for (let i =0; i < allcards.length; i++) {
       let clothingItemName = allcards[i].querySelector("p[class=name_of_clothing_item]").innerHTML;
@@ -100,11 +99,9 @@ document.getElementById('createKnapsakButton').addEventListener('click', () => {
           packingListObj[clothingItemName].quantity = countEl.value;
           console.log(packingListObj);
           localStorage.setItem('packingListObj', JSON.stringify(packingListObj));
-        }
+        };
       });
-
-    //  console.log(countEl);
-    }
+    };
   });
 
 
@@ -158,11 +155,11 @@ document.getElementById('logIntoMyAccountButtonInLoginDiv').addEventListener('cl
   $("#user-dashboard-div").show();
 });
 
-document.getElementById('headerLogInButton').addEventListener('click', () => {
-  $("#index-container").hide();
-  $("#header-div").hide();
-  $("#user-login-div").show();
-});
+// document.getElementById('headerLogInButton').addEventListener('click', () => {
+//   $("#index-container").hide();
+//   $("#header-div").hide();
+//   $("#user-login-div").show();
+// });
 
 // document.getElementById('').addEventListener('click', () => {
 //   $("#").hide();
