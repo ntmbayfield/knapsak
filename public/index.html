@@ -23,7 +23,7 @@
           <img src="https://image.ibb.co/b50gmy/Knapsak_logo_long.png" alt="Knapsak_logo_long" border="0" class="navbar-left" style="height:102px">
         </div>
         <ul class="nav navbar-nav navbar-right btn-default" id="signInButtonFromNav">
-          <li><a href="#loginDiv" id="signIntoMyAccountButton" class="navbar-btn">Sign In To My Account!</a></li>
+          <li><a href="#user-login-div" id="signIntoMyAccountButton" class="navbar-btn">Sign In To My Account!</a></li>
         </ul>
       </div>
     </nav>
@@ -115,7 +115,7 @@
               <input type="text" class="w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required="">
             <label>Password</label>
               <input type="password" class="w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" id="field" required="">
-            <input type="submit" value="Create My Free Account" data-wait="Please wait..." class="w-button" id="createMyFreeAccountButton">
+            <input type="button" value="Create My Free Account" data-wait="Please wait..." class="w-button" id="createMyFreeAccountButton">
           </form>
         </div>
       </div>
@@ -137,6 +137,9 @@
     <div>
       <div class="w-container">
         <input type="button" id="displaySavedKnapsaksButton" value="Display my saved Knapsaks">
+      </div>
+      <div id="displaySavedKnapsaksArea">
+        <p></p>
       </div>
     </div>
     <div>

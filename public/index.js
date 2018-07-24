@@ -145,27 +145,43 @@ document.getElementById('createMyFreeAccountButton').addEventListener('click', (
   $("#success-signup-div").show();
 });
 
-document.getElementById('goToDashboardButton').addEventListener('click', () => {
-  $("#success-signup-div").hide();
-  $("#user-dashboard-div").show();
-});
-
 document.getElementById('logIntoMyAccountButtonInLoginDiv').addEventListener('click', () => {
   $("#user-login-div").hide();
   $("#user-dashboard-div").show();
 });
 
-// document.getElementById('headerLogInButton').addEventListener('click', () => {
-//   $("#index-container").hide();
-//   $("#header-div").hide();
-//   $("#user-login-div").show();
+document.getElementById('signIntoMyAccountButton').addEventListener('click', () => {
+  $("#header-element-div").hide();
+  $("#create-knapsak-div").hide();
+  $("#user-login-div").show();
+});
+
+document.getElementById('createKnapsakForRegisteredUserButton').addEventListener('click', () => {
+  $("#user-dashboard-div").hide();
+  $("#create-knapsak-div").show();
+});
+
+document.getElementById('goToDashboardButton').addEventListener('click', () => {
+  $("#signup-div").hide();
+  $("#success-signup-div").hide();
+  $("#user-dashboard-div").show();
+});
+
+// document.getElementById('').addEventListener('click', () => {
+//   $("#").hide();
+//   $("#").show();
 // });
 
 // document.getElementById('').addEventListener('click', () => {
 //   $("#").hide();
 //   $("#").show();
 // });
-//
+
+// document.getElementById('').addEventListener('click', () => {
+//   $("#").hide();
+//   $("#").show();
+// });
+
 // document.getElementById('').addEventListener('click', () => {
 //   $("#").hide();
 //   $("#").show();
@@ -175,5 +191,3 @@ document.getElementById('logIntoMyAccountButtonInLoginDiv').addEventListener('cl
 //   $("#").hide();
 //   $("#").show();
 // });
-
-//add event listeners for createMyFreeAccountButton, goToDashboardButton, logIntoMyAccountButton, logInButtonOnNavBar
