@@ -138,3 +138,27 @@ p {
 #index-ul {
   background: green;
 }
+
+/*DASHBOARD STYLING FOR SAVED KNAPSAKS*/
+#hidden-knapsak-area {
+  display: inline;
+}
+
+.svdtxtnode {
+  display: block;
+  align: center;
+  margin: auto;
+}
+
+.svdimgnode {
+  align: center;
+  margin: auto;
+}
+
+.svdknskcard {
+  display: inline;
+  align: left;
+  margin: 20px;
+  height: 310px;
+  width: 310px;
+}

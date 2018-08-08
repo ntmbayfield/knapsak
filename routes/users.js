@@ -27,6 +27,15 @@ router.get('/:userid', function(req, res, next) {
   })
 });
 
+
+// knex('users')
+// .where('email', req.body.email)
+// .then((data) => {
+//   console.log('that email address belongs to the user with an id of', data)
+//   res.send(data)
+//   })
+// });
+
 /*POST - create a new user*/
 router.post('/', function(req, res, next) {
   let userInfo = {
@@ -41,6 +50,7 @@ router.post('/', function(req, res, next) {
       console.log('sucessfully created user account');
       res.statusCode = 200;
       return res.json(userInfo);
+      console.log('user has an Id of ');
     })
     .catch(function(error) {
       console.error(error);

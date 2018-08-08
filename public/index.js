@@ -1,6 +1,10 @@
 
 const baseURL = 'http://localhost:3333';
 var itemsArray;
+var knapsaksArray;
+var uidFromDb;
+var name4greeting;
+var usersArray;
 var packingListObj = {};
 var kidsName = "";
 var tripTitle = "";
@@ -99,7 +103,7 @@ document.getElementById('createKnapsakButton').addEventListener('click', () => {
           packingListObj[clothingItemName].quantity = countEl.value;
           console.log(packingListObj);
           localStorage.setItem('packingListObj', JSON.stringify(packingListObj));
-        };
+        }
       });
     };
   });
@@ -146,11 +150,33 @@ document.getElementById('createMyFreeAccountButton').addEventListener('click', (
 });
 
 document.getElementById('logIntoMyAccountButtonInLoginDiv').addEventListener('click', () => {
-  $("#user-login-div").hide();
-  $("#user-dashboard-div").show();
-});
+  let loginEmailVal = document.getElementById('login-email').value;
+  let hiMessage = document.getElementById('dashboard-greeting');
+  let loginErrorMessage = document.getElementById('login-error-message');
 
-document.getElementById('signIntoMyAccountButton').addEventListener('click', () => {
+  axios.get(`${baseURL}/users`)
+    .then(result => {
+      console.log(result)
+      usersArray = result.data
+    })
+
+    for (let i=0; i < usersArray.length; i++) {
+      if (loginEmailVal === usersArray[i].email) {
+        console.log('that user has a user_id of ', usersArray[i].id);
+        uidFromDb = usersArray[i].id;
+        name4greeting = usersArray[i].name;
+        hiMessage.innerHTMl = `Hi, ${name4greeting}!`;
+        $("#user-login-div").hide();
+        $("#user-dashboard-div").show();
+      } else {
+        loginErrorMessage.innerHTMl = "There is no user wth that email address in our system.  Please try again.";
+      }
+    };
+  //
+  // $("#user-login-div").hide();
+  // $("#user-dashboard-div").show();
+
+document.getElementById('signIntoMyAccountButtonOnHeader').addEventListener('click', () => {
   $("#header-element-div").hide();
   $("#create-knapsak-div").hide();
   $("#user-login-div").show();
@@ -167,10 +193,35 @@ document.getElementById('goToDashboardButton').addEventListener('click', () => {
   $("#user-dashboard-div").show();
 });
 
-// document.getElementById('').addEventListener('click', () => {
-//   $("#").hide();
-//   $("#").show();
-// });
+document.getElementById('displaySavedKnapsaksButton').addEventListener('click', () => {
+    //To Do: what if there is no userId in localStorage
+    let savedKnapsaksDiv = document.getElementById('hidden-knapsak-area');
+
+    // let uid = localStorage.getItem('userID');
+    axios.get(`${baseURL}/users/${uidFromDb}/knapsaks`)
+    .then(result => {
+      console.log(`user${uidFromDb} knapsaks`)
+      console.log(result)
+      knapsaksArray = result.data
+
+      for (let i = 0; i < knapsaksArray.length; i++) {
+        console.log('inside knapsaksArray');
+        console.log(knapsaksArray[i].description);
+        let savedKnapsakCard = document.createElement('div');
+            savedKnapsakCard.className = 'svdknskcard';
+        let savedImageNode = document.createElement('img');
+            savedImageNode.className = 'svdimgnode';
+            savedImageNode.src = 'https://image.ibb.co/fRZ7Ry/knapsak_green.png';
+        let savedTextNode = document.createElement('p');
+            savedTextNode.className = 'svdtxtnode';
+            savedTextNode.innerHTML = knapsaksArray[i].description;
+        savedKnapsakCard.appendChild(savedImageNode);
+        savedKnapsakCard.appendChild(savedTextNode);
+        savedKnapsaksDiv.appendChild(savedKnapsakCard);
+      }
+    });
+});
+});
 
 // document.getElementById('').addEventListener('click', () => {
 //   $("#").hide();
